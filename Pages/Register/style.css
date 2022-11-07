@@ -109,7 +109,7 @@ header {
 
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     height: 48px;
     width: 100%;
