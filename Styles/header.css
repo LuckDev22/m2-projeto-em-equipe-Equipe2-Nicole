@@ -1,0 +1,29 @@
+#navHeader{
+    display: flex;
+    height: fit-content;    
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 23px 0;
+}
+
+#headerLogo{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--blue);
+}
+
+#headerBtns{    
+    display: flex;
+    align-items: center;
+    gap: 13px;  
+}
+
+
+@media(max-width:550px) {
+    #navHeader {
+        justify-content: center;
+    }
+}
