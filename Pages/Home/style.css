@@ -1,0 +1,14 @@
+.selected{
+    text-decoration: underline;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.btnDelete{
+    color: red;
+    height: 50px;
+    width: 50px;
+}

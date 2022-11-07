@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,30 @@
     <link rel="stylesheet" href="../../styles/spinner.css">
     <script src="https://kit.fontawesome.com/36c8b92452.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <header class="container">
+        <div id="headerLogo">
+            <i class="fa-solid fa-paw"></i>
+            <h2>KenziePets</h2>
+        </div>
+        <div id="headerBtns">
+            <a class="btnWhite">Minhas Adoções</a>
+            <a class="btnBrand" id="btnLogout">Logout</a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="homeFilter">
+            <h4 class='selected' id="allBtn">Todos</h4>
+            <h4 id="avaliableBtn">Disponíveis para adoção</h4>
+        </div>
+        <section id="petListSection">
+            <ul id="petList">
+               
+            </ul>
+        </section>
+    </main>
     <script type="module" src="./script.js"></script>
 </body>
+
 </html>
