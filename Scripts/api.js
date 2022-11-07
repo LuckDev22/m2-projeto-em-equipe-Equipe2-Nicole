@@ -30,7 +30,6 @@ export async function getAllPets() {
             },
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response
@@ -49,7 +48,6 @@ export async function deletePet(id) {
             },
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response
@@ -70,7 +68,6 @@ export async function adotePet(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response

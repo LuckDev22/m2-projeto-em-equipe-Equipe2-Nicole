@@ -28,7 +28,7 @@ function renderAllPets(list) {
     list.map(pet => {
         petList.insertAdjacentHTML('beforeend', `
         <li class="petCard">
-            <span><img src="${pet.avatar_url}" alt=""></span>
+            <span><img src="${pet.avatar_url}" id="img-${pet.id}" alt=""></span>
                 <div class="pet">
                     <h2 class="petName">${pet.name}</h2>
                     <h2 class="petSpecies">${pet.species}</h2>
@@ -93,6 +93,7 @@ const deletePetModal = async (id) => {
 
     deletePetBtn.addEventListener('click', async () => {
         await deletePet(id)
+        allPetsList = await getAllPets()
         deletePetModal.remove()
         unlockScroll()
         avaliableFilter.classList.remove('selected')
@@ -133,6 +134,7 @@ const adotePetModal = async (id) => {
     adotePetBtn.addEventListener('click', async () => {
         let body = {"pet_id": id}
         await adotePet(body)
+        allPetsList = await getAllPets()
         adotePetModal.remove()
         unlockScroll()
         avaliableFilter.classList.remove('selected')
