@@ -1,0 +1,8 @@
+.btnBrand {
+    background: var(--blue);
+    border-radius: 4px;
+    border: none;
+    outline: 1px solid var(--blue);
+    height: 50px;
+    color: var(--white)
+}
