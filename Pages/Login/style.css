@@ -19,6 +19,25 @@
     margin-right: 30px;
 }
 
+#backPageNone{
+    display: none;
+}
+
+@media (min-width: 840px) {
+    #backPageNone{
+        display: flex;
+        color:var(--white)
+    }
+
+    #divbackPage{
+        position: fixed;
+        left: 0;
+        top:0;
+        display: flex;
+        padding: 20px;
+        align-items: center;
+    }
+}
 
 #logo{
     display: flex;
