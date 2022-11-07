@@ -17,18 +17,14 @@ export function loginUser() {
 
 loginUser()
 
-
-
 function buttonSpinner() {
-    const btnLogin = document.getElementById("acessar")
+    const btnLogin = document.getElementById("btnLoginPage")
+    const spiner = document.getElementById("spiner")
 
     btnLogin.addEventListener("click", () => {
         btnLogin.innerText = ""
-        const imgLoading = document.createElement("img")
-        imgLoading.src = "../img/spinner.png"
-        imgLoading.classList.add("imgLoading")
-        btnLogin.append(imgLoading)
+        spiner.classList = "imgLoading fa-solid fa-spinner" 
+        btnLogin.append(spiner)
     })
 }
-
 buttonSpinner()

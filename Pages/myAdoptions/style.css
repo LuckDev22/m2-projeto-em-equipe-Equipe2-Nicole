@@ -20,12 +20,13 @@
 .userDataContainer {
   margin-top: 100px;
   padding: 20px 40px;
-  border: 1px solid var(--blue-namedog);
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
+  border-radius: 4px;
   transition: all 1s ease;
 }
 
@@ -54,26 +55,29 @@
 
 .petList {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
+  padding: 20px 0;
 }
 
 .petList li {
-  height: 200px;
+  width: 300px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
   align-items: center;
   width: fit-content;
   background-color: var(--white);
   border-radius: 4px;
   box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
-  padding-right: 60px;
+  padding-bottom: 20px;
 }
 
 .petList li img {
   height: 200px;
-  width: 200px;
+  width: 300px;
   object-fit: cover;
   border-radius: 4px 0 0 4px;
 }
@@ -82,6 +86,15 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+#pFooter {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue-placeh);
+  font-size: var(--size2);
 }
 
 @media (min-width: 840px) { 
@@ -97,5 +110,40 @@
     transition: all 1s ease;
     width: fit-content;
     align-items: baseline;
+  }
+
+  .petList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .petList li {
+    width: 300px;
+    align-items: center;
+  }
+
+  .petList li img {
+    height: 200px;
+    width: 300px;
+  }
+}
+
+@media (min-width: 1050px) { 
+  .petList li {
+    width: 500px;
+    max-width: 45%;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 0px;
+    padding-right: 20px;
+  }
+
+  .petList li img {
+    height: 200px;
+    width: 200px;
   }
 }

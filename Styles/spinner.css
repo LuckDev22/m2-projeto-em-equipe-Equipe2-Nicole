@@ -1,7 +1,7 @@
 .imgLoading{
     margin-top: 3px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    
 -webkit-animation: spin 2s linear infinite;
 -moz-animation: spin 2s linear infinite;
 animation: spin 2s linear infinite;
