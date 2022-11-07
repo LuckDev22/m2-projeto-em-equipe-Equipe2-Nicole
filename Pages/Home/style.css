@@ -8,7 +8,36 @@ img{
 }
 
 .btnDelete{
-    color: red;
+    color: var(--red);
     height: 50px;
     width: 50px;
 }
+
+
+
+/*
+<body>
+    <header class="container">
+        <div id="headerLogo">
+            <i class="fa-solid fa-paw"></i>
+            <h2>KenziePets</h2>
+        </div>
+        <div id="headerBtns">
+            <a class="btnWhite">Minhas Adoções</a>
+            <a class="btnBrand" id="btnLogout">Logout</a>
+        </div>
+    </header>
+    <main class="container">
+        <div id="homeFilter">
+            <h4 class='selected' id="allBtn">Todos</h4>
+            <h4 id="avaliableBtn">Disponíveis para adoção</h4>
+        </div>
+        <section id="petListSection">
+            <ul id="petList">
+               
+            </ul>
+        </section>
+    </main>
+    <script type="module" src="./script.js"></script>
+</body>
+*/
