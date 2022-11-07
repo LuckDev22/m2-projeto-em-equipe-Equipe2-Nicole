@@ -17,17 +17,12 @@ export function loginUser() {
 
 loginUser()
 
-
-
 function buttonSpinner() {
     const btnLogin = document.getElementById("btnLoginPage")
     const spiner = document.getElementById("spiner")
 
     btnLogin.addEventListener("click", () => {
         btnLogin.innerText = ""
-        
-        // const imgLoading = document.createElement("img")
-        // imgLoading.src = "../img/spinner.png"
         spiner.classList = "imgLoading fa-solid fa-spinner" 
         btnLogin.append(spiner)
     })

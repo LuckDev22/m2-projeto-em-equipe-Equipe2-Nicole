@@ -13,7 +13,7 @@ export async function login(body) {
             console.log(response)       
             localStorage.setItem("TokenLogin", response.token)
             setTimeout(() =>{
-                // window.location.assign("../Pages/myAdoptions/index.html")
+            window.location.assign("../Pages/myAdoptions/index.html")
             },4000)
         })
         return response
