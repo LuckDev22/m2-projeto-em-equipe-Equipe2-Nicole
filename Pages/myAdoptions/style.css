@@ -1,0 +1,52 @@
+.perfilHeader {
+  background-color: var(--blue);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarProfile {
+  position: relative;
+  top: 80px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 5px solid var(--white);
+  transition: all 1s ease;
+}
+
+.userDataContainer {
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid var(--blue-namedog);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 1s ease;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 840px) { 
+  .avatarProfile {
+    top: 120px;
+    width: 320px;
+    height: 320px;
+    transition: all 1s ease;
+  }
+
+  .userDataContainer {
+    margin-top: 150px;
+    transition: all 1s ease;
+    width: fit-content;
+    align-items: baseline;
+  }
+}
