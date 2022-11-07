@@ -1,0 +1,114 @@
+#h1Logo{
+    color: var(--white);
+}
+
+#h1Page{
+    color: var(--blue);
+}
+#loginPage {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+
+}
+
+#backPage{
+    color: var(--white);
+    font-size: var(--size5);
+    margin-right: 30px;
+}
+
+#backPageNone{
+    display: none;
+}
+
+@media (min-width: 840px) {
+    #backPageNone{
+        display: flex;
+        color:var(--white)
+    }
+
+    #divbackPage{
+        position: fixed;
+        left: 0;
+        top:0;
+        display: flex;
+        padding: 20px;
+        align-items: center;
+    }
+}
+
+#logo{
+    display: flex;
+}
+
+#divLogin {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 320px;
+    background-color: var(--white);
+    gap: 18px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+@media (min-width: 840px) {
+    #divLogin {
+        position: fixed;
+        top: 35%;
+    }
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#divLogo {
+    background-color: var(--blue);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 840px) {
+    #divLogo {
+        height: 50vh;
+    }
+}
+
+form input {
+    padding: 15px;
+    height: 50px;
+    background: var(--white);
+    border: 1px solid var(--blue-placeh);
+    border-radius: 4px;
+    color: var(--blue-placeh)
+
+}
+
+input::placeholder {
+    color: var(--blue-placeh);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #F1EEF7;
+    height: 40px;
+    width: 100vw;
+    align-items: center;
+}
+
+#pFooter {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue-placeh);
+    font-size: var(--size2);
+}
