@@ -14,3 +14,13 @@ export const logout = () => {
         }, 3300);
     })
 }
+
+const body = document.querySelector('body')
+export function lockScroll() {
+    window.scroll(0, 0)
+    body.style.overflow = 'hidden'
+}
+
+export function unlockScroll() {
+    body.style.overflow = 'auto'
+}

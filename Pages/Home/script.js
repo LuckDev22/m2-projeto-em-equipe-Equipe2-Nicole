@@ -1,5 +1,5 @@
 import {getAllPets, deletePet, adotePet} from '../../scripts/api.js'
-import {verifyLogin, logout} from '../../scripts/LoginLogout.js'
+import {verifyLogin, logout, lockScroll, unlockScroll} from '../../scripts/LoginLogout.js'
 
 verifyLogin()
 logout()
@@ -40,7 +40,7 @@ function renderAllPets(list) {
         let lastPetbtn = document.getElementById(`delete-${pet.id}`)
         if (pet.available_for_adoption) {
             lastPetbtn.insertAdjacentHTML('beforebegin', `
-                <a class="btnGreen" id="adote-${pet.id}">Me adote</a>
+                <a class="btnSmallSuccess" id="adote-${pet.id}">Me adote</a>
             `)
         }
     })
@@ -79,7 +79,7 @@ const deletePetModal = async (id) => {
             </div>
         </article>
     `)
-    // lockScroll()
+    lockScroll()
 
     let deletePetModal = document.getElementById('deletePetModal')
     let closeDeletePet = document.getElementById('closeDeletePet')
@@ -116,7 +116,7 @@ const adotePetModal = async (id) => {
             </div>
         </article>
     `)
-    // lockScroll()
+    lockScroll()
 
     let adotePetModal = document.getElementById('adotePetModal')
     let closeAdotePet = document.getElementById('closeAdotePet')
