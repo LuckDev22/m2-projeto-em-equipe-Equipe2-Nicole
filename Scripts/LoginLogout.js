@@ -1,6 +1,7 @@
 export const verifyLogin = () => {
     const user = localStorage.getItem('TokenLogin') || ""
-    if (user == "" || user == null) {
+    console.log(user);
+    if (user == "" || user == null|| user == 'undefined') {
         window.location.replace("../login/index.html");
     }
 };
