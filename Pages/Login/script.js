@@ -16,3 +16,15 @@ export function loginUser() {
 
 
 loginUser()
+
+function buttonSpinner() {
+    const btnLogin = document.getElementById("btnLoginPage")
+    const spiner = document.getElementById("spiner")
+
+    btnLogin.addEventListener("click", () => {
+        btnLogin.innerText = ""
+        spiner.classList = "imgLoading fa-solid fa-spinner" 
+        btnLogin.append(spiner)
+    })
+}
+buttonSpinner()

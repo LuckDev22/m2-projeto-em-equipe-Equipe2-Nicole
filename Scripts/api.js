@@ -10,9 +10,11 @@ export async function login(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json().then((response) => {
-            console.log(response)
-            window.location.assign("../Pages/myAdoptions/index.html")
+            console.log(response)       
             localStorage.setItem("TokenLogin", response.token)
+            setTimeout(() =>{
+            window.location.assign("../Pages/myAdoptions/index.html")
+            },4000)
         })
         return response
     } catch (err) {
@@ -78,3 +80,4 @@ export async function adotePet(body) {
         console.log(err)
     }
 }
+
