@@ -16,3 +16,19 @@ export function loginUser() {
 
 
 loginUser()
+
+
+
+function buttonSpinner() {
+    const btnLogin = document.getElementById("acessar")
+
+    btnLogin.addEventListener("click", () => {
+        btnLogin.innerText = ""
+        const imgLoading = document.createElement("img")
+        imgLoading.src = "../img/spinner.png"
+        imgLoading.classList.add("imgLoading")
+        btnLogin.append(imgLoading)
+    })
+}
+
+buttonSpinner()
