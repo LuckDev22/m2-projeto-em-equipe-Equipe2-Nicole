@@ -72,10 +72,11 @@ const deletePetModal = async (id) => {
         <article class='modalContainer' id="deletePetModal">
             <div class='modalBox'>
                 <span>
-                <i id="closeDeletePet" class="modalClose fa-regular fa-circle-xmark"></i>
+                    <i id="closeDeletePet" class="modalClose fa-regular fa-circle-xmark"></i>
                 </span>
-                <h2>Realmente deseja deletar o registro do Pet: ${petName}?</h2>            
-                <button class="bttn-green" id="deletePetBtn">Confirmar</button>
+                <h2>Realmente deseja deletar o registro do Pet: ${petName}?</h2>
+                <p>Essa ação não poderá ser desfeita!</p>
+                <button class="btnSmallAlert" id="deletePetBtn">Confirmar</button>
             </div>
         </article>
     `)
@@ -110,9 +111,11 @@ const adotePetModal = async (id) => {
                 <span>
                 <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
                 </span>
-                <h2>Realmente deseja adtar o Pet: ${petName}?</h2>  
+                <div>
+                <h2>Realmente deseja adotar o Pet: ${petName}?</h2>  
                 <aside><img class='adoteImg' id="" src="${petImg}" alt=""></aside>          
-                <button class="bttn-green" id="adotePetBtn">Confirmar</button>
+                </div>
+                <button class="btnSmallSuccess" id="adotePetBtn">Confirmar</button>
             </div>
         </article>
     `)
