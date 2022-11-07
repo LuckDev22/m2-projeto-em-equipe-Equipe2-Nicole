@@ -2,6 +2,10 @@
     text-decoration: underline;
 }
 
+header{    
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
 img{
     width: 100px;
     height: 100px;
@@ -15,20 +19,24 @@ img{
 
 main{
     position: relative;
-    padding-top: 30px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 #homeFilter{
+    gap: 30px;
+    padding: 30px 70px;
+    margin-bottom: 40px;
+    background-color: var(--blue);
+    color: var(--white);    
+}
+
+.filter{
     display: flex;
     justify-content: space-between;
-    gap: 30px;
-    padding: 0 70px;
-    margin-bottom: 40px;
     flex-wrap: wrap;
-    color: var(--blue);    
+    gap: 13px;
 }
 
 #petList{
@@ -82,15 +90,36 @@ main{
     height: 23px;
     width: 73px;
     position: absolute;
-    right: 33px;
-    bottom: 5px;
+    right: 30px;
+    bottom: 9px;
+    font-size: 13px;
+}
+
+.pet .btnSmallAlert{
+    cursor: not-allowed;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 23px;
+    width: 73px;
+    position: absolute;
+    right: 30px;
+    bottom: 9px;
     font-size: 13px;
 }
 
 .btnDelete{
     position: absolute;
-    right: -30px;
-    bottom: -23px;
+    height: fit-content;
+    width: fit-content;
+    right: 7px;
+    bottom: 11px;
+}
+
+.btnDelete:hover{
+    padding: 2px;
 }
 
 

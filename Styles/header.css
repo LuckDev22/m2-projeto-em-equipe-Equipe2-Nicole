@@ -1,9 +1,8 @@
 #navHeader{
     display: flex;
     height: fit-content;    
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
     padding: 23px 0;
@@ -20,4 +19,11 @@
     display: flex;
     align-items: center;
     gap: 13px;  
+}
+
+
+@media(max-width:550px) {
+    #navHeader {
+        justify-content: center;
+    }
 }

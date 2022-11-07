@@ -40,7 +40,11 @@ function renderAllPets(list) {
         let lastPetbtn = document.getElementById(`delete-${pet.id}`)
         if (pet.available_for_adoption) {
             lastPetbtn.insertAdjacentHTML('beforebegin', `
-                <a class="btnSmallSuccess" id="adote-${pet.id}">Me adote</a>
+                <a class="btnSmallSuccess" id="adote-${pet.id}">Me adote!</a>
+            `)
+        }else{
+            lastPetbtn.insertAdjacentHTML('beforebegin', `
+                <a class="btnSmallAlert" disabled>Adotado!</a>
             `)
         }
     })
