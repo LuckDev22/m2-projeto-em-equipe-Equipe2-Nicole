@@ -17,15 +17,18 @@
     ></script>
   </head>
   <body>
-    <header class="container" id="navHeader">
-      <div id="headerLogo">
-        <i class="fa-solid fa-paw"></i>
-        <h2>KenziePets</h2>
-      </div>
-      <div id="headerBtns">
-        <a class="btnSmallLink">Home</a>
-        <a class="btnSmallBrand" id="btnLogout">Logout</a>
-      </div>
+    <header id="navHeader">
+        <div class="container" id="headerSpacing">
+            <div id="headerLogo">
+                <i class="fa-solid fa-paw"></i>
+                <h2>KenziePets</h2>
+              </div>
+              <div id="headerBtns">
+                <a class="btnSmallLink">Home</a>
+                <a class="btnSmallBrand" id="btnLogout">Logout</a>
+              </div>
+        </div>
+      
     </header>
     <section class="perfilHeader">
       <img
@@ -49,53 +52,14 @@
     <section class="container petsSection">
       <button class="btnSmallSuccess">Cadastrar novo pet</button>
       <ul class="petList">
-        <li>
-          <img
-            src="https://media.cnn.com/api/v1/images/stellar/prod/220818142713-dogs-tears-emotions-wellness-stock.jpg?c=16x9&q=h_720,w_1280,c_fill"
-          />
-          <div>
-            <p><span class="txtBlue">Nome:</span> Bidu</p>
-            <p><span class="txtBlue">Espécie:</span> Cachorro</p>
-            <p><span class="txtBlue">Adotável:</span> Sim</p>
-            <button class="btnSmallBrand">Atualizar</button>
-          </div>
-        </li>
-        <li>
-            <img
-              src="https://media.cnn.com/api/v1/images/stellar/prod/220818142713-dogs-tears-emotions-wellness-stock.jpg?c=16x9&q=h_720,w_1280,c_fill"
-            />
-            <div>
-              <p><span class="txtBlue">Nome:</span> Bidu</p>
-              <p><span class="txtBlue">Espécie:</span> Cachorro</p>
-              <p><span class="txtBlue">Adotável:</span> Sim</p>
-              <button class="btnSmallBrand">Atualizar</button>
-            </div>
-          </li>
-          <li>
-            <img
-              src="https://media.cnn.com/api/v1/images/stellar/prod/220818142713-dogs-tears-emotions-wellness-stock.jpg?c=16x9&q=h_720,w_1280,c_fill"
-            />
-            <div>
-              <p><span class="txtBlue">Nome:</span> Bidu</p>
-              <p><span class="txtBlue">Espécie:</span> Cachorro</p>
-              <p><span class="txtBlue">Adotável:</span> Sim</p>
-              <button class="btnSmallBrand">Atualizar</button>
-            </div>
-          </li>
-          <li>
-            <img
-              src="https://media.cnn.com/api/v1/images/stellar/prod/220818142713-dogs-tears-emotions-wellness-stock.jpg?c=16x9&q=h_720,w_1280,c_fill"
-            />
-            <div>
-              <p><span class="txtBlue">Nome:</span> Bidu</p>
-              <p><span class="txtBlue">Espécie:</span> Cachorro</p>
-              <p><span class="txtBlue">Adotável:</span> Sim</p>
-              <button class="btnSmallBrand">Atualizar</button>
-            </div>
-          </li>
+       <!-- Renderiza cards dos cachorros -->
       </ul>
     </section>
-
+    <footer class="container">
+        <p id="pFooter">
+            KenziePets | Todos os Direitos Reservados
+        </p>
+    </footer>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
