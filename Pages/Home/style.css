@@ -207,26 +207,21 @@ main{
     margin-bottom: 10px;
 }
 
+footer {
+    position: relative;
+    margin-top: 30px;
+    bottom: 0;
+    background-color: #F1EEF7;
+    height: 40px;
+    width: 100vw;
+    align-items: center;
+}
 
-
-/*
-<article class='modalContainer' id="adotePetModal">
-            <div class='modalBox'>
-                <span>
-                <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
-                </span>
-                <h2>Realmente deseja adotar o Pet: ${petName}?</h2>  
-                <aside><img class='adoteImg' id="" src="${petImg}" alt=""></aside>          
-                <button class="bttn-green" id="adotePetBtn">Confirmar</button>
-            </div>
-        </article>
-<article class='modalContainer' id="deletePetModal">
-            <div class='modalBox'>
-                <span>
-                <i id="closeDeletePet" class="modalClose fa-regular fa-circle-xmark"></i>
-                </span>
-                <h2>Realmente deseja deletar o registro do Pet: ${petName}?</h2>            
-                <button class="bttn-green" id="deletePetBtn">Confirmar</button>
-            </div>
-        </article>
-*/
+#pFooter {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue-placeh);
+    font-size: var(--size2);
+}

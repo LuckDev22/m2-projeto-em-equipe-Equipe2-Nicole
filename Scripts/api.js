@@ -77,4 +77,3 @@ export async function adotePet(body) {
         console.log(err)
     }
 }
-
