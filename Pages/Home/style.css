@@ -114,6 +114,7 @@ main{
     width: 400px;
     gap: 13px;
     border-radius: 8px;
+    justify-content: center;
 }
 
 .modalBox span{
@@ -130,8 +131,64 @@ main{
     padding-right: 7px;
 }
 
+.modalBox h2{
+    text-justify: distribute-all-lines;
+    padding: 0 33px;
+    font-size: 20px;
+    color: var(--black);
+}
+
+.modalBox p{
+    font-size: 15px;
+    color: var(--red);
+    padding: 0 33px;
+}
+
+.modalBox div{
+    display: flex;
+    justify-content: space-between;
+    gap: 13px;
+    align-items: center;
+}
+.modalBox div h2{
+    padding-right: 0;
+}
+
+.modalBox aside{
+    padding-right: 33px;
+}
+
+.adoteImg{
+    border-radius: 7px;
+}
+
+.btnSmallAlert{
+    margin: 13px;
+}
+
+.modalBox .btnSmallSuccess{
+    position: relative;
+    top: 0;
+    left: 215px;
+    width: 40%;
+    height: 30px;
+    justify-self: center;
+    margin-bottom: 10px;
+}
+
+
 
 /*
+<article class='modalContainer' id="adotePetModal">
+            <div class='modalBox'>
+                <span>
+                <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
+                </span>
+                <h2>Realmente deseja adotar o Pet: ${petName}?</h2>  
+                <aside><img class='adoteImg' id="" src="${petImg}" alt=""></aside>          
+                <button class="bttn-green" id="adotePetBtn">Confirmar</button>
+            </div>
+        </article>
 <article class='modalContainer' id="deletePetModal">
             <div class='modalBox'>
                 <span>
