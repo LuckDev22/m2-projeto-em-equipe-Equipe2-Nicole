@@ -13,8 +13,8 @@ export async function login(body) {
             console.log(response)       
             localStorage.setItem("TokenLogin", response.token)
             setTimeout(() =>{
-            window.location.assign("../myAdoptions/index.html")
-            },2200)
+            window.location.assign("../Pages/myAdoptions/index.html")
+            },4000)
         })
         return response
     } catch (err) {
@@ -32,7 +32,6 @@ export async function getAllPets() {
             },
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response
@@ -51,7 +50,6 @@ export async function deletePet(id) {
             },
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response
@@ -72,7 +70,6 @@ export async function adotePet(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json().then((response) => {
-            console.log(response)
             return response
         })
         return response
@@ -80,4 +77,3 @@ export async function adotePet(body) {
         console.log(err)
     }
 }
-
