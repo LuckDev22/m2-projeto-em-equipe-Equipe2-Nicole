@@ -26,7 +26,7 @@ main {
 
 #homeFilter {
     gap: 30px;
-    padding: 7px 5vw;
+    padding: 7px;
     margin-bottom: 40px;
     background-color: var(--blue);
     color: var(--white);
@@ -41,7 +41,7 @@ main {
 
 #petList {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
     max-width: 90vw;
