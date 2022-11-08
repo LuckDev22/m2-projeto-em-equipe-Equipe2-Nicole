@@ -18,7 +18,7 @@ header {
 }
 
 #regPage {
-    width: 100%;    
+    width: 100%;
     min-width: 390px;
     display: flex;
     justify-content: center;
@@ -28,13 +28,13 @@ header {
     display: flex;
     flex-direction: column;
     width: 95%;
-    max-width: 320px;    
+    max-width: 320px;
     gap: 18px;
     padding: 20px;
     border-radius: var(--radius2);
 }
 
-#h1Page {    
+#h1Page {
     font-weight: var(--weight3);
     font-size: var(--size4);
     line-height: var(--height4);
@@ -87,6 +87,9 @@ footer {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8bd97ea38b21105c0cef5179037097baedbcbb4e
 @media (min-width: 840px) {
     #msg-desktop {
         display: flex;
@@ -102,12 +105,19 @@ footer {
     #logo {
         align-items: baseline;
     }
+<<<<<<< HEAD
 =======
 @media (min-width: 840px) {    
     #divLogo {
         height: 50vh;
     }   
 >>>>>>> 3d3f57b4316d80e4fc2f7e66fef2b09d9caa3bcd
+=======
+
+    #divLogo {
+        height: 50vh;
+    }
+>>>>>>> 8bd97ea38b21105c0cef5179037097baedbcbb4e
 
     #divReg {
         position: fixed;
