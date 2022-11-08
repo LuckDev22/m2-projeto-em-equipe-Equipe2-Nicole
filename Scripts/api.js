@@ -177,6 +177,9 @@ export async function editMyProfile(body) {
       },
       body: JSON.stringify(body),
     })
+    if (request.ok) {      
+      toast("Dados Atualizados!", "Suas informações foram substituídas.")
+    }
     const response = await request.json()
     return response
   } catch (err) {
@@ -218,6 +221,9 @@ export async function editMyPets(body, id) {
       },
       body: JSON.stringify(body),
     })
+    if (request.ok) {      
+      toast("Dados Atualizados!", "As informações do Pet foram substituídas.")
+    }
     const response = await request.json()
     console.log(response)
     return response
@@ -235,6 +241,9 @@ export async function deleteMyAdoption(id) {
         Authorization: "Bearer " + user,
       },
     })
+    if (request.ok) {      
+      toast("Adoção removida!", "Você não é mais o responsavel por ele.")
+    }
   } catch (err) {
     console.log(err)
   }
@@ -268,7 +277,7 @@ export async function createPet(body) {
       body: JSON.stringify(body),
     })
     if (request.ok) {
-      toast("Pet criado com sucesso!", "Atualizando a lista.")
+      toast("Pet criado com sucesso!", "Atualizando a lista...")
     }
     const response = await request.json()
     console.log(response)
@@ -277,7 +286,6 @@ export async function createPet(body) {
       response.message == "please inform a valid image link" ||
       response.message == "'avatar_url' is required"
     ) {
-      console.log("toast avatar")
       toast("Erro!", "Favor informar uma imagem válida.")
     }
   } catch (err) {
@@ -294,6 +302,9 @@ export async function deleteMyPet(id) {
         Authorization: "Bearer " + user,
       },
     })
+    if (request.ok) {
+      toast("Pet removido!", "Todas as informações foram apagadas.")
+    }
   } catch (err) {
     console.log(err)
   }
