@@ -23,7 +23,7 @@ function buttonSpinner() {
 
     btnLogin.addEventListener("click", () => {
         btnLogin.innerText = ""
-        spiner.classList = "imgLoading fa-solid fa-spinner" 
+        spiner.classList = "imgLoading fa-solid fa-spinner"
         btnLogin.append(spiner)
     })
 }

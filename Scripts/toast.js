@@ -31,6 +31,4 @@ export const toast = (title, message) => {
     containerToast.append(toastHead, toastText)
 
     body.appendChild(containerToast)
-
-
 }
