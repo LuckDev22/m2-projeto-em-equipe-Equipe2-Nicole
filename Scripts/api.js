@@ -14,8 +14,8 @@ export async function login(body) {
             console.log(response)
             localStorage.setItem("TokenLogin", response.token)
             setTimeout(() =>{
-            window.location.assign("../Pages/myAdoptions/index.html")
-            },4000)
+            window.location.assign("../home/index.html")
+            },2500)
         })
         return response
     } catch (err) {
@@ -95,7 +95,7 @@ export async function register(body, btn) {
             setTimeout(() => {
                 btn.innerText = "Cadastrar"
                 window.location.assign("/pages/login/index.html")
-            }, 4000)
+            }, 2700)
         }
         const response = await request.json()
         console.log(response)
