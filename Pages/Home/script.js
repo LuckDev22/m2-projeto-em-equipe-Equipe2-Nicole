@@ -140,15 +140,15 @@ const adotePetModal = async (id) => {
     const petImg = allPetsList.find(pet => (pet.id == id)).avatar_url
     main.insertAdjacentHTML('afterend', `
         <article class='modalContainer' id="adotePetModal">
-            <div class='modalBox adoteModalBox'>
+            <div class='modalBox'>
                 <span class='modalHeader'>
                 <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
                 </span>
-                <div>
-                <h2>Realmente deseja adotar o Pet: ${petName}?</h2>  
+                <div class='modalContainerBox'>
+                <h2>Realmente deseja adotar o Pet: <br>${petName}?</h2>  
                 <aside><img class='adoteImg' id="" src="${petImg}" alt=""></aside>          
                 </div>
-                <button class="btnSmallSuccess" id="adotePetBtn">Confirmar</button>
+                <button class="modalContainerBtn btnSmallSuccess" id="adotePetBtn">Confirmar</button>
             </div>
         </article>
     `)

@@ -13,7 +13,7 @@
 }
 
 .modalBox {
-
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -23,6 +23,13 @@
     border-radius: 8px;
     justify-content: center;
     animation: modal 1300ms;
+}
+.modalContainerBox {
+    padding: 13px;
+}
+
+.modalContainerBtn{
+    margin: 13px
 }
 
 .modalHeader {
@@ -67,6 +74,8 @@
 
 .adoteImg {
     border-radius: 7px;
+    width: 150px;
+    height: 170px;
 }
 
 .btnSmallAlert {

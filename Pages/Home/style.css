@@ -47,6 +47,7 @@ main {
     flex-wrap: wrap;
     gap: 30px;
     max-width: 90vw;
+    padding-bottom: 40px;
 }
 
 .petCard {
@@ -148,6 +149,11 @@ footer {
     height: 40px;
     width: 100vw;
     align-items: center;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    width: 100%;
 }
 
 #pFooter {
