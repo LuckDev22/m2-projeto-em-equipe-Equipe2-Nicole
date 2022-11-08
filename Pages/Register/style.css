@@ -93,26 +93,9 @@ footer {
 }
 
 @media (min-width: 840px) {
-    #msg-desktop {
-        display: flex;
-    }
-
-    header {
-        height: 458px;
-        max-width: 100%;
-        min-width: 390px;
-        background: var(--blue);
-    }
-
-    #logo {
-        align-items: baseline;
-    }
-}
-
-@media (min-width: 840px) {    
     #divLogo {
         height: 50vh;
-    }   
+    }
 
     #divReg {
         position: fixed;
