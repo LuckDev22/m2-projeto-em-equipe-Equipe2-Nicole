@@ -112,7 +112,6 @@ export async function register(body, btn) {
       }, 2700)
     }
     const response = await request.json()
-    console.log(response)
     if (response.message == "Email already in use") {
       toast("Erro!", "E-mail já cadastrado.")
       setTimeout(() => {
@@ -123,7 +122,6 @@ export async function register(body, btn) {
       response.message == "please inform a valid image link" ||
       response.message == "'avatar_url' is required"
     ) {
-      console.log("toast avatar")
       toast("Erro!", "Favor informar uma imagem válida.")
       setTimeout(() => {
         btn.innerText = "Cadastrar"
@@ -177,7 +175,7 @@ export async function editMyProfile(body) {
       },
       body: JSON.stringify(body),
     })
-    if (request.ok) {      
+    if (request.ok) {
       toast("Dados Atualizados!", "Suas informações foram substituídas.")
     }
     const response = await request.json()
@@ -222,11 +220,10 @@ export async function editMyPets(body, id) {
       },
       body: JSON.stringify(body),
     })
-    if (request.ok) {      
+    if (request.ok) {
       toast("Dados Atualizados!", "As informações do Pet foram substituídas.")
     }
     const response = await request.json()
-    console.log(response)
     return response
   } catch (err) {
     console.log(err)
@@ -242,7 +239,7 @@ export async function deleteMyAdoption(id) {
         Authorization: "Bearer " + user,
       },
     })
-    if (request.ok) {      
+    if (request.ok) {
       toast("Adoção removida!", "Você não é mais o responsavel por ele.")
     }
   } catch (err) {
@@ -281,7 +278,6 @@ export async function createPet(body) {
       toast("Pet criado com sucesso!", "Atualizando a lista...")
     }
     const response = await request.json()
-    console.log(response)
 
     if (
       response.message == "please inform a valid image link" ||

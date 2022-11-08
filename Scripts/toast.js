@@ -25,7 +25,6 @@ export const toast = (title, message) => {
         iconToast.style = "color: white; font-size: 28px;"
         toastTitle.style = "color: white"
         toastText.style = "color: white"
-        
     }
 
     toastHead.append(iconToast, toastTitle)

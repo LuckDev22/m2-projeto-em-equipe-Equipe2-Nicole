@@ -19,22 +19,6 @@ import {
 verifyLogin()
 logout()
 
-{
-  /* 
-  <li>
-    <img
-      src="https://media.cnn.com/api/v1/images/stellar/prod/220818142713-dogs-tears-emotions-wellness-stock.jpg?c=16x9&q=h_720,w_1280,c_fill"
-    />
-    <div>
-      <p><span class="txtBlue">Nome:</span> Bidu</p>
-      <p><span class="txtBlue">Espécie:</span> Cachorro</p>
-      <p><span class="txtBlue">Adotável:</span> Sim</p>
-      <button class="btnSmallBrand">Atualizar</button>
-    </div>
-  </li> 
-  */
-}
-
 const createCard = (adoption) => {
   const card = document.createElement("li")
   const imgPet = document.createElement("img")
@@ -111,7 +95,6 @@ const createMyPetsCard = (pet) => {
 
   deleteButton.addEventListener("click", (e) => {
     e.preventDefault()
-    console.log("clickei")
     const form = deleteMyPetModal(pet)
     createModal(form)
     lockScroll()
@@ -141,8 +124,6 @@ const renderMyPetCards = async () => {
   const myPets = await getAllMyPets()
 
   const list = document.querySelector("#myPetList")
-
-  console.log(myPets)
 
   list.innerHTML = ""
 
@@ -291,8 +272,6 @@ const editPetModal = (pet) => {
 
   button.addEventListener("click", async (e) => {
     e.preventDefault()
-
-    console.log(pet.id)
 
     let body = {
       name: nameInput.value,

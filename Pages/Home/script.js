@@ -33,7 +33,7 @@ function renderAllPets(list) {
                     <h2 class="petName">${pet.name}</h2>
                     <h2 class="petSpecies">${pet.species}</h2>
                     <span id='card-${pet.id}' class='cardBtns'>
-                    <a class="btnView" id="view-${pet.id}"><i class="fa-solid fa-eye"></i></a>
+                        <a class="btnView" id="view-${pet.id}"><i class="fa-solid fa-eye"></i></a>
                     </span>
                 </div>                    
             
@@ -74,7 +74,7 @@ avaliableFilter.addEventListener('click', () => {
 
 const viewPetModal = async (id) => {
     let selectedPet = allPetsList.find(pet => (pet.id == id))
-       
+
     main.insertAdjacentHTML('afterend', `
         <article class='modalContainer' id="viewPetModal">
             <div class='modalBox'>
@@ -95,7 +95,7 @@ const viewPetModal = async (id) => {
                 </div>
             </div>
         </article>
-    `)    
+    `)
     let viewPetModal = document.getElementById('viewPetModal')
     let imgModalElement = document.getElementById(`imgModal-${selectedPet.id}`)
     if (selectedPet.available_for_adoption) {
@@ -120,7 +120,6 @@ const viewPetModal = async (id) => {
 
     if (selectedPet.available_for_adoption) {
         adoteModalBtn.addEventListener('click', async () => {
-            console.log('teste');
             let body = { "pet_id": selectedPet.id }
             await adotePet(body)
             allPetsList = await getAllPets()
@@ -132,7 +131,7 @@ const viewPetModal = async (id) => {
             allFilter.classList.add('selected')
             renderAllPets(allPetsList)
         })
-    } 
+    }
 }
 
 const adotePetModal = async (id) => {
@@ -142,11 +141,13 @@ const adotePetModal = async (id) => {
         <article class='modalContainer' id="adotePetModal">
             <div class='modalBox'>
                 <span class='modalHeader'>
-                <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
+                    <i id="closeAdotePet" class="modalClose fa-regular fa-circle-xmark"></i>
                 </span>
                 <div class='modalContainerBox'>
-                <h2>Realmente deseja adotar o Pet: <br>${petName}?</h2>  
-                <aside><img class='adoteImg' id="" src="${petImg}" alt=""></aside>          
+                    <h2>Realmente deseja adotar o Pet: <br>${petName}?</h2>  
+                    <aside>
+                        <img class='adoteImg' id="" src="${petImg}" alt="">
+                    </aside>          
                 </div>
                 <button class="modalContainerBtn btnSmallSuccess" id="adotePetBtn">Confirmar</button>
             </div>
