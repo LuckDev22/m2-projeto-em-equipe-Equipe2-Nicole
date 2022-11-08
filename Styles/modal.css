@@ -23,6 +23,7 @@
     gap: 13px;
     border-radius: 8px;
     justify-content: center;
+    animation: modal 1300ms;
 }
 
 .modalBox span {
@@ -83,4 +84,19 @@
     height: 30px;
     justify-self: center;
     margin-bottom: 10px;
+}
+
+@keyframes modal {
+    0% {
+        transform: translate(-70%, 0%);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

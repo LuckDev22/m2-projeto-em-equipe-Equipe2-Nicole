@@ -24,7 +24,6 @@ const trackBttns = () => {
 }
 
 function renderAllPets(list) {
-    console.log(allPetsList);
     petList.innerHTML = ''
     list.map(pet => {
         petList.insertAdjacentHTML('beforeend', `
