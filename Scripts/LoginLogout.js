@@ -1,7 +1,6 @@
 export const verifyLogin = () => {
     const user = localStorage.getItem('TokenLogin') || ""
-    console.log(user);
-    if (user == "" || user == null|| user == 'undefined') {
+    if (user == "" || user == null || user == 'undefined') {
         window.location.replace("../login/index.html");
     }
 };
@@ -12,7 +11,7 @@ export const logout = () => {
         localStorage.removeItem('TokenLogin')
         setTimeout(() => {
             window.location.replace("../login/index.html");
-        }, 3300);
+        }, 2300);
     })
 }
 
