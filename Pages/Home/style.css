@@ -93,7 +93,6 @@ main {
     color: var(--blue-namedog);
 }
 
-
 .exclamation {
     font-weight: 500;
     font-size: 15px;
@@ -165,7 +164,6 @@ footer {
     font-size: var(--size2);
 }
 
-
 @media (min-width: 840px) {
 
     .cardBtns {
@@ -215,9 +213,14 @@ footer {
 
 }
 
-
 @media (min-width: 563px) {
     #homeFilter {
         margin-top: 80px;
+    }
+}
+
+@media (max-width: 325px) {
+    #homeFilter {
+        margin-top: 140px;
     }
 }

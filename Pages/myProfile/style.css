@@ -76,7 +76,7 @@ body {
   background-color: var(--white);
   box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
   padding: 20px;
-  gap: 20px ;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +113,7 @@ body {
   background-color: var(--white);
 }
 
-.adoptionList li img { 
+.adoptionList li img {
   height: 100%;
   width: 80px;
   object-fit: cover;
@@ -166,7 +166,7 @@ body {
   background-color: var(--white);
 }
 
-#myPetList li img { 
+#myPetList li img {
   height: 80px;
   width: 80px;
   max-width: 100%;
@@ -219,12 +219,12 @@ body {
 }
 
 /* Scrollbar */
-.adoptionList::-webkit-scrollbar{
+
+.adoptionList::-webkit-scrollbar {
   width: 6px;
   height: 6px;
   background: transparent;
 }
-
 
 .adoptionList::-webkit-scrollbar-thumb {
   background: var(--blue);
@@ -235,15 +235,17 @@ body {
   background-color: transparent;
 }
 
-#myPetList::-webkit-scrollbar{
+#myPetList::-webkit-scrollbar {
   width: 6px;
   height: 6px;
   background: transparent;
 }
+
 #myPetList::-webkit-scrollbar-thumb {
   background: var(--blue);
   border-radius: 8px;
 }
+
 #myPetList::-webkit-scrollbar-track {
   background-color: transparent;
 }
@@ -324,9 +326,9 @@ body {
 }
 
 .modalInput::placeholder {
-  color: var(--blue-placeh);;
+  color: var(--blue-placeh);
+  ;
 }
-
 
 @media (min-width: 840px) {
   .avatarProfile {
@@ -335,6 +337,7 @@ body {
     height: 200px;
     transition: all 1s ease;
   }
+
   .userSection {
     flex-direction: row;
   }
@@ -350,7 +353,7 @@ body {
     align-items: baseline;
   }
 
-  .myAdoptionsContainer{
+  .myAdoptionsContainer {
     height: 240px;
     width: 50%;
   }
@@ -372,7 +375,7 @@ body {
     align-items: center;
   }
 
-  #myPetList  {
+  #myPetList {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
@@ -394,7 +397,7 @@ body {
     background-color: var(--white);
   }
 
-  #myPetList li img { 
+  #myPetList li img {
     height: 100%;
     width: 80px;
   }
@@ -404,5 +407,4 @@ body {
   .adoptionList li {
     width: 98%;
   }
-
 }

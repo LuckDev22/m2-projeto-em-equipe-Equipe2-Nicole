@@ -1,14 +1,13 @@
 .container {
     padding: 23px 13vw;
-
 }
 
-#navHeader{
+#navHeader {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
-    height: fit-content;    
+    height: fit-content;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
@@ -18,19 +17,18 @@
     z-index: 1;
 }
 
-#headerLogo{
+#headerLogo {
     display: flex;
     align-items: center;
     gap: 13px;
     color: var(--blue);
 }
 
-#headerBtns{    
+#headerBtns {
     display: flex;
     align-items: center;
-    gap: 13px;  
+    gap: 13px;
 }
-
 
 @media(max-width:550px) {
     #navHeader {
