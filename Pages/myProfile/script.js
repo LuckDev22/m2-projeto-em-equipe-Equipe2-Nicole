@@ -221,11 +221,13 @@ const editUserModal = (user) => {
   nameInput.classList.add("modalInput")
   nameInput.placeholder = "Nome"
   nameInput.value = user.name
+  nameInput.required = true
 
   const avatarInput = document.createElement("input")
   avatarInput.classList.add("modalInput")
   avatarInput.placeholder = "Url do Avatar"
   avatarInput.value = user.avatar_url
+  avatarInput.required = true
 
   const button = document.createElement("button")
   button.classList.add("btnBrand")
@@ -266,24 +268,28 @@ const editPetModal = (pet) => {
   nameInput.classList.add("modalInput")
   nameInput.placeholder = "Nome"
   nameInput.value = pet.name
+  nameInput.required = true
 
   const breadInput = document.createElement("input")
   breadInput.type = "text"
   breadInput.classList.add("modalInput")
   breadInput.placeholder = "Raça"
   breadInput.value = pet.bread
+  breadInput.required = true
 
   const specieInput = document.createElement("input")
   specieInput.type = "text"
   specieInput.classList.add("modalInput")
   specieInput.placeholder = "Espécie"
   specieInput.value = pet.species
+  specieInput.required = true
 
   const avatarInput = document.createElement("input")
   avatarInput.type = "text"
   avatarInput.classList.add("modalInput")
   avatarInput.placeholder = "Url do Avatar"
   avatarInput.value = pet.avatar_url
+  avatarInput.required = true
 
   const button = document.createElement("button")
   button.classList.add("btnBrand")
@@ -306,6 +312,7 @@ const editPetModal = (pet) => {
     modal.remove()
     unlockScroll()
     renderMyPetCards()
+    renderCards()
   })
 
   formContainer.append(
@@ -365,6 +372,7 @@ const deleteMyAdoptionModal = (pet) => {
       const modal = document.querySelector(".modalBg")
       modal.remove()
       unlockScroll()
+      renderMyPetCards()
       renderCards()
     }, 500)
   })
@@ -393,6 +401,7 @@ const deleteMyPetModal = (pet) => {
     modal.remove()
     unlockScroll()
     renderMyPetCards()
+    renderCards()
   })
 
   formContainer.append(title, button)
@@ -411,21 +420,25 @@ const createPetModal = () => {
   nameInput.type = "text"
   nameInput.classList.add("modalInput")
   nameInput.placeholder = "Nome"
+  nameInput.required = true
 
   const breadInput = document.createElement("input")
   breadInput.type = "text"
   breadInput.classList.add("modalInput")
   breadInput.placeholder = "Raça"
+  breadInput.required = true
 
   const specieInput = document.createElement("input")
   specieInput.type = "text"
   specieInput.classList.add("modalInput")
   specieInput.placeholder = "Espécie"
+  specieInput.required = true
 
   const avatarInput = document.createElement("input")
   avatarInput.type = "text"
   avatarInput.classList.add("modalInput")
   avatarInput.placeholder = "Url do Avatar"
+  avatarInput.required = true
 
   const button = document.createElement("button")
   button.classList.add("btnBrand")
@@ -446,6 +459,7 @@ const createPetModal = () => {
     modal.remove()
     unlockScroll()
     renderMyPetCards()
+    renderCards()
   })
 
   formContainer.append(
