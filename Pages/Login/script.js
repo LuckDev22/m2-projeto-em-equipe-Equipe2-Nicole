@@ -14,7 +14,6 @@ export function loginUser() {
     });
 }
 
-
 loginUser()
 
 function buttonSpinner() {
