@@ -11,7 +11,7 @@
     box-shadow: 0px 4px 30px -12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     background: #4ca055;
-    animation: toastIt 40000ms ease-in forwards;
+    animation: toastIt 4000ms ease-in forwards;
     border: 5px solid #4ca055;
 }
 
@@ -28,7 +28,7 @@
     box-shadow: 0px 4px 30px -12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     background: #c64242;
-    animation: toastIt 40000ms ease-in forwards;
+    animation: toastIt 4000ms ease-in forwards;
     border: 5px solid #c64242;
 }
 
