@@ -53,6 +53,8 @@ const createCard = (pet) => {
   attButton.classList.add("iconEdit")
   attButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`
 
+  attButton.addEventListener("click", (e) => {})
+
   const deleteButton = document.createElement("button")
   deleteButton.classList.add("iconDelete")
   deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`
@@ -98,6 +100,68 @@ const renderMyProfile = async () => {
 
   console.log(myProfile)
 }
+
+const createModal = (children) => {
+  const body = document.querySelector("body")
+  const modalBg = document.createElement("div")
+  modalBg.classList.add("modalBg")
+
+  const modalContainer = document.createElement("section")
+  modalContainer.classList = "modalContainer"
+
+  const modalHeader = document.createElement("div")
+  modalHeader.classList.add("modalHeader")
+
+  const closeModal = document.createElement("span")
+  closeModal.classList.add("closeModal")
+  closeModal.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>'
+
+  modalBg.addEventListener("click", (e) => {
+    const { className } = e.target
+    if (className === "modalBg" || className === "fa-regular fa-circle-xmark") {
+      modalBg.remove()
+    }
+  })
+
+  modalHeader.appendChild(closeModal)
+  modalContainer.append(modalHeader, children)
+  modalBg.appendChild(modalContainer)
+
+  body.appendChild(modalBg)
+}
+
+const editUserModal = (user) => {
+  const formContainer = document.createElement("form")
+  formContainer.classList.add("formContainer")
+
+  const title = document.createElement("h3")
+  title.innerText = "Editar usuário"
+
+  const nameInput = document.createElement("input")
+  nameInput.classList.add("modalInput")
+  nameInput.placeholder = "Nome"
+  nameInput.value = user.name
+
+  const avatarInput = document.createElement("input")
+  avatarInput.classList.add("modalInput")
+  avatarInput.placeholder = "Url do Avatar"
+  avatarInput.value = user.avatar_url
+
+  const button = document.createElement("button")
+  button.classList.add("btnBrand")
+  button.innerText = "Atualizar"
+
+  formContainer.append(title, nameInput, avatarInput, button)
+
+  return formContainer
+}
+
+const editUserButton = document.querySelector("#editUser")
+editUserButton.addEventListener("click", async (e) => {
+  const user = await getMyProfile()
+  const form = editUserModal(user)
+  createModal(form)
+})
 
 renderMyProfile()
 renderCards()

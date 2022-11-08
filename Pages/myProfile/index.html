@@ -20,7 +20,7 @@
     <span class="container" id='navHeader'>
       <div id="headerLogo">
         <i class="fa-solid fa-paw"></i>
-        <h2>KenziePets</h2>
+        <a href="../home/index.html"><h2>KenziePets</h2></a>
       </div>
       <div id="headerBtns">
         <a class="btnSmallLink" href="../home/index.html">Home</a>
@@ -38,22 +38,26 @@
         
       </div>
       <div class="dataButtons">
-        <button class="btnSmallBrand">Atualizar informações</button>
-        <button class="btnSmallAlert">Deletar conta</button>
+        <button class="btnSmallBrand" id="editUser"><i class="fa-solid fa-pen-to-square"></i> Editar</button>
+        <button class="btnSmallAlert"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
     <div class="myAdoptionsContainer">
-      <h4>Minhas adoções</h4>
+      <h3>Minhas adoções</h3>
       <ul class="adoptionList">
         <!-- Renderiza cards dos cachorros -->
       </ul>
     </div>
   </section>
   <section class="container petsSection">
-    <button class="btnSmallSuccess">Cadastrar novo pet</button>
+    <div class="petListHeader">
+      <h3>Lista de Pets</h3>
+      <button class="btnSmallSuccess"><i class="fa-solid fa-plus"></i> Cadastrar Pet</button>
+    </div>
+    
     
   </section>
-  <footer class="container">
+  <footer>
     <p id="pFooter">
       KenziePets | Todos os Direitos Reservados
     </p>
