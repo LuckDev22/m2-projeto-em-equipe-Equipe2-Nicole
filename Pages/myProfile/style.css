@@ -1,0 +1,225 @@
+.perfilHeader {
+  background-color: var(--blue);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarProfile {
+  position: relative;
+  top: 80px;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 5px solid var(--white);
+  transition: all 1s ease;
+}
+
+.userDataContainer {
+  padding: 20px 40px;
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.userSection {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: all 1s ease;
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dataButtons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.txtBlue {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.petsSection {
+  padding: 40px 0;
+}
+
+.myAdoptionsContainer {
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  padding: 20px;
+  gap: 20px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.adoptionList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  gap: 20px;
+  height: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.adoptionList li {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  font-size: 14px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  padding-bottom: 0px;
+  padding-right: 20px;
+  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
+  border-radius: 4px;
+  background-color: var(--white);
+}
+
+.adoptionList li img { 
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 4px 0 0 4px;
+}
+
+.adoptionList li div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dataPet {
+  padding: 20px
+}
+
+/* Footer */
+
+#pFooter {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue-placeh);
+  font-size: var(--size2);
+}
+
+/* Buttons card */
+
+.buttonContainer {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.iconEdit {
+  background-color: transparent;
+  border: none;
+  color: var(--blue);
+  font-size: 18px;
+}
+
+.iconDelete {
+  background-color: transparent;
+  border: none;
+  color: var(--red);
+  font-size: 18px;
+}
+
+
+/* Scrollbar */
+.adoptionList::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+
+.adoptionList::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 8px;
+}
+
+.adoptionList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+@media (min-width: 840px) {
+  .avatarProfile {
+    top: 80px;
+    width: 200px;
+    height: 200px;
+    transition: all 1s ease;
+  }
+  .userSection {
+    flex-direction: row;
+  }
+
+  .userDataContainer {
+    width: 400px;
+    max-width: 100%;
+  }
+
+  .userContainer {
+    margin-top: 150px;
+    transition: all 1s ease;
+    width: fit-content;
+    align-items: baseline;
+  }
+
+  .myAdoptionsContainer{
+    height: 240px;
+    width: 100%;
+  }
+
+  .adoptionList {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    max-height: 240px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .adoptionList li {
+    width: 300px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1050px) {
+  .adoptionList li {
+    width: 100%;
+  }
+
+}
