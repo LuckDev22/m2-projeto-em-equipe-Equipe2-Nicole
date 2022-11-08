@@ -197,6 +197,7 @@ export async function deleteMyProfile() {
       },
     })
     if (request.ok) {
+      localStorage.removeItem('TokenLogin')
       toast(
         "Conta deletada com sucesso!",
         "Redirecionando para a página de login"
