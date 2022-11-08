@@ -1,4 +1,12 @@
-import { getMyAdoptions, getMyProfile } from "../../scripts/api.js"
+import {
+  getMyAdoptions,
+  getMyProfile,
+  deleteMyAdoption,
+  editMyAdoptions,
+  deleteMyProfile,
+  editMyProfile,
+  getAllMyPets,
+} from "../../scripts/api.js"
 import {
   verifyLogin,
   logout,
@@ -25,9 +33,9 @@ logout()
   */
 }
 
-const createCard = (pet) => {
+const createCard = (adoption) => {
   let adoptable = ""
-  if (pet.available_for_adoption == true) {
+  if (adoption.pet.available_for_adoption == true) {
     adoptable = "Sim"
   } else {
     adoptable = "Não"
@@ -35,21 +43,21 @@ const createCard = (pet) => {
 
   const card = document.createElement("li")
   const imgPet = document.createElement("img")
-  imgPet.src = pet.avatar_url
+  imgPet.src = adoption.pet.avatar_url
 
   const dataPet = document.createElement("div")
   dataPet.classList.add("dataPet")
 
   const petName = document.createElement("p")
-  petName.innerHTML = `<span class="txtBlue">Nome:</span> ${pet.name}`
+  petName.innerHTML = `<span class="txtBlue">Nome:</span> ${adoption.pet.name}`
 
   const petSpecie = document.createElement("p")
-  petSpecie.innerHTML = `<span class="txtBlue">Espécie:</span> ${pet.species}`
+  petSpecie.innerHTML = `<span class="txtBlue">Espécie:</span> ${adoption.pet.species}`
 
   const buttonContainer = document.createElement("div")
   buttonContainer.classList.add("buttonContainer")
 
-  const attButton = document.createElement("button")
+  /*  const attButton = document.createElement("button")
   attButton.classList.add("iconEdit")
   attButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`
 
@@ -58,7 +66,7 @@ const createCard = (pet) => {
     const form = editPetModal(pet)
     createModal(form)
     lockScroll()
-  })
+  }) */
 
   const deleteButton = document.createElement("button")
   deleteButton.classList.add("iconDelete")
@@ -66,13 +74,13 @@ const createCard = (pet) => {
 
   deleteButton.addEventListener("click", async (e) => {
     e.preventDefault()
-    const form = deletePetModal(pet)
+    const form = deleteMyAdoptionModal(adoption)
     createModal(form)
     lockScroll()
   })
 
   dataPet.append(petName, petSpecie)
-  buttonContainer.append(attButton, deleteButton)
+  buttonContainer.appendChild(deleteButton)
   card.append(imgPet, dataPet, buttonContainer)
 
   return card
@@ -83,8 +91,10 @@ const renderCards = async () => {
 
   const list = document.querySelector(".adoptionList")
 
+  list.innerHTML = ""
+
   myAdoptions.forEach((adoption) => {
-    const card = createCard(adoption.pet)
+    const card = createCard(adoption)
     list.append(card)
   })
 }
@@ -93,6 +103,9 @@ const renderMyProfile = async () => {
   const myProfile = await getMyProfile()
   const userData = document.querySelector(".userData")
   const avatar = document.querySelector(".perfilHeader")
+
+  userData.innerHTML = ""
+  avatar.innerHTML = ""
 
   userData.insertAdjacentHTML(
     "afterbegin",
@@ -128,6 +141,9 @@ const createModal = (children) => {
   closeModal.classList.add("closeModal")
   closeModal.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>'
 
+  const modalFooter = document.createElement("div")
+  modalFooter.classList.add("modalFooter")
+
   modalBg.addEventListener("click", (e) => {
     const { className } = e.target
     if (className === "modalBg" || className === "fa-regular fa-circle-xmark") {
@@ -137,7 +153,7 @@ const createModal = (children) => {
   })
 
   modalHeader.appendChild(closeModal)
-  modalContainer.append(modalHeader, children)
+  modalContainer.append(modalHeader, children, modalFooter)
   modalBg.appendChild(modalContainer)
 
   body.appendChild(modalBg)
@@ -165,7 +181,21 @@ const editUserModal = (user) => {
   button.innerText = "Atualizar"
 
   button.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault()
+
+    let body = {}
+    if (nameInput.value != user.name) {
+      body.name = nameInput.value
+    }
+    if (avatarInput.value != user.avatar_url) {
+      body.avatar_url = avatarInput.value
+    }
+
+    editMyProfile(body)
+    const modal = document.querySelector(".modalBg")
+    modal.remove()
+    unlockScroll()
+    renderMyProfile()
   })
 
   formContainer.append(title, nameInput, avatarInput, button)
@@ -209,7 +239,23 @@ const editPetModal = (pet) => {
   button.innerText = "Atualizar"
 
   button.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault()
+
+    let body = {}
+    if (nameInput.value != pet.name) {
+      body.name = nameInput.value
+    }
+    if (breadInput.value != pet.bread) {
+      body.bread = breadInput.value
+    }
+    if (specieInput.value != pet.species) {
+      body.bread = specieInput.value
+    }
+    if (avatarInput.value != pet.avatar_url) {
+      body.bread = avatarInput.value
+    }
+
+    editMyAdoptions(body, pet.id)
   })
 
   formContainer.append(
@@ -236,8 +282,12 @@ const deleteUserModal = (user) => {
   button.classList.add("btnSmallAlert")
   button.innerText = "Quero deletar minha conta"
 
-  button.addEventListener("click", (e) => {
-    e.preventDefault
+  button.addEventListener("click", async (e) => {
+    e.preventDefault()
+    deleteMyProfile()
+    const modal = document.querySelector(".modalBg")
+    modal.remove()
+    unlockScroll()
   })
 
   formContainer.append(title, button)
@@ -245,20 +295,28 @@ const deleteUserModal = (user) => {
   return formContainer
 }
 
-const deletePetModal = (pet) => {
+const deleteMyAdoptionModal = (pet) => {
   const formContainer = document.createElement("form")
   formContainer.classList.add("formContainer")
 
   const title = document.createElement("h3")
-  title.innerText = "Deseja mesmo deletar sua conta?"
+  title.innerText = "Deseja mesmo desfazer a adoção desse pet??"
   title.classList.add("txtCenter")
 
   const button = document.createElement("button")
   button.classList.add("btnSmallAlert")
-  button.innerText = "Quero deletar minha conta"
+  button.innerText = "Quero cancelar a adoção!"
 
-  button.addEventListener("click", (e) => {
-    e.preventDefault
+  button.addEventListener("click", async (e) => {
+    e.preventDefault()
+    deleteMyAdoption(pet.id)
+
+    setTimeout(() => {
+      const modal = document.querySelector(".modalBg")
+      modal.remove()
+      unlockScroll()
+      renderCards()
+    }, 500)
   })
 
   formContainer.append(title, button)
