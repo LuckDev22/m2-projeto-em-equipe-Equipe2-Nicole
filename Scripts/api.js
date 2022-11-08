@@ -11,11 +11,15 @@ export async function login(body) {
       body: JSON.stringify(body),
     })
     const response = await request.json().then((response) => {
-      console.log(response)
-      localStorage.setItem("TokenLogin", response.token)
-      setTimeout(() => {
-        window.location.assign("../home/index.html")
-      }, 2500)
+     if(request.ok){
+        toast("Login", "Login realizado com sucesso")
+        localStorage.setItem("TokenLogin", response.token)
+        setTimeout(() => {
+            window.location.assign("../home/index.html")
+          }, 2500)
+     } else {
+        toast("Erro!", "Email ou senha incorreto")
+     }
     })
     return response
   } catch (err) {
