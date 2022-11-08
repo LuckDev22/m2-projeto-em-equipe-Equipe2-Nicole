@@ -11,11 +11,15 @@ export async function login(body) {
       body: JSON.stringify(body),
     })
     const response = await request.json().then((response) => {
-      console.log(response)
-      localStorage.setItem("TokenLogin", response.token)
-      setTimeout(() => {
-        window.location.assign("../home/index.html")
-      }, 2500)
+     if(request.ok){
+        toast("Login", "Login realizado com sucesso")
+        localStorage.setItem("TokenLogin", response.token)
+        setTimeout(() => {
+            window.location.assign("../home/index.html")
+          }, 2500)
+     } else {
+        toast("Erro!", "Email ou senha incorreto")
+     }
     })
     return response
   } catch (err) {
@@ -53,10 +57,14 @@ export async function deletePet(id) {
     const response = await request.json().then((response) => {
       return response
     })
-    toast(
-      "Pet removido com sucesso!",
-      "Todas as informações foram deletadas do banco de dados"
-    )
+    if(request.ok){
+        toast(
+            "Pet removido com sucesso!",
+            "Todas as informações foram deletadas do banco de dados"
+          )
+    }else {
+        toast("Erro!", "Você não é guardião desse PET")
+    }
     return response
   } catch (err) {
     console.log(err)
