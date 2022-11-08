@@ -5,6 +5,12 @@ header {
     background: var(--blue);
 }
 
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
 #divLogo {
     background-color: var(--blue);
     height: 80px;
