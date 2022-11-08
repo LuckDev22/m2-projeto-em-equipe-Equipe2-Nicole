@@ -1,4 +1,5 @@
 const baseUrl = 'https://m2-api-adot-pet.herokuapp.com/'
+import { toast } from "./toast.js"
 
 export async function login(body) {
     try {
@@ -13,8 +14,8 @@ export async function login(body) {
             console.log(response)       
             localStorage.setItem("TokenLogin", response.token)
             setTimeout(() =>{
-            window.location.assign("../home/index.html")
-            },3000)
+            window.location.assign("../Pages/myAdoptions/index.html")
+            },4000)
         })
         return response
     } catch (err) {
@@ -75,5 +76,41 @@ export async function adotePet(body) {
         return response
     } catch (err) {
         console.log(err)
+    }
+}
+
+export async function register(body, btn) {
+    try {
+        const request = await fetch(`${baseUrl}users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+        if(request.ok){
+            toast("Conta criada com sucesso!", "Redirecionando para a página de login")
+            setTimeout(() => {
+                btn.innerText = "Cadastrar"
+                window.location.assign("/pages/login/index.html")
+            }, 4000)            
+        }
+        const response = await request.json()
+        console.log(response)        
+        if(response.message == "Email already in use"){
+            toast("Erro!", "E-mail já cadastrado.")
+            setTimeout(() => {
+                btn.innerText = "Cadastrar"                
+            },4000)            
+        }
+        if(response.message == "please inform a valid image link" || response.message == "'avatar_url' is required" ){
+            console.log("toast avatar")
+            toast("Erro!", "Favor informar uma imagem válida.")
+            setTimeout(() => {
+                btn.innerText = "Cadastrar"                
+            },4000)            
+        }
+    }catch(err){
+        return err
     }
 }
