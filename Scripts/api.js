@@ -57,7 +57,7 @@ export async function deletePet(id) {
     const response = await request.json().then((response) => {
       return response
     })
-    if(response.ok){
+    if(request.ok){
         toast(
             "Pet removido com sucesso!",
             "Todas as informações foram deletadas do banco de dados"
@@ -65,7 +65,6 @@ export async function deletePet(id) {
     }else {
         toast("Erro!", "Você não é guardião desse PET")
     }
-   
     return response
   } catch (err) {
     console.log(err)
