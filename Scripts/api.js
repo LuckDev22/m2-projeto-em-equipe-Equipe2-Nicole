@@ -11,15 +11,15 @@ export async function login(body) {
       body: JSON.stringify(body),
     })
     const response = await request.json().then((response) => {
-     if(request.ok){
+      if (request.ok) {
         toast("Login", "Login realizado com sucesso")
         localStorage.setItem("TokenLogin", response.token)
         setTimeout(() => {
-            window.location.assign("../home/index.html")
-          }, 2500)
-     } else {
+          window.location.assign("../home/index.html")
+        }, 2500)
+      } else {
         toast("Erro!", "Email ou senha incorreto")
-     }
+      }
     })
     return response
   } catch (err) {
@@ -57,13 +57,13 @@ export async function deletePet(id) {
     const response = await request.json().then((response) => {
       return response
     })
-    if(request.ok){
-        toast(
-            "Pet removido com sucesso!",
-            "Todas as informações foram deletadas do banco de dados"
-          )
-    }else {
-        toast("Erro!", "Você não é guardião desse PET")
+    if (request.ok) {
+      toast(
+        "Pet removido com sucesso!",
+        "Todas as informações foram deletadas do banco de dados"
+      )
+    } else {
+      toast("Erro!", "Você não é guardião desse PET")
     }
     return response
   } catch (err) {
@@ -154,6 +154,86 @@ export async function getMyProfile() {
   const user = localStorage.getItem("TokenLogin")
   try {
     const request = await fetch(baseUrl + "users/profile", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + user,
+      },
+    })
+    const response = await request.json()
+    return response
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export async function editMyProfile(body) {
+  const user = localStorage.getItem("TokenLogin")
+  try {
+    const request = await fetch(baseUrl + "users/profile", {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: "Bearer " + user,
+      },
+      body: body,
+    })
+    const response = await request.json()
+    return response
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export async function deleteMyProfile() {
+  const user = localStorage.getItem("TokenLogin")
+  try {
+    const request = await fetch(baseUrl + "users/profile", {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + user,
+      },
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export async function editMyAdoptions(body, id) {
+  const user = localStorage.getItem("TokenLogin")
+  try {
+    const request = await fetch(baseUrl + "pet/" + id, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: "Bearer " + user,
+      },
+      body: body,
+    })
+    const response = await request.json()
+    return response
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export async function deleteMyAdoption(id) {
+  const user = localStorage.getItem("TokenLogin")
+  try {
+    const request = await fetch(baseUrl + "adoptions/delete/" + id, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + user,
+      },
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export async function getAllMyPets() {
+  const user = localStorage.getItem("TokenLogin")
+  try {
+    const request = await fetch(baseUrl + "pets/my_pets", {
       method: "GET",
       headers: {
         Authorization: "Bearer " + user,

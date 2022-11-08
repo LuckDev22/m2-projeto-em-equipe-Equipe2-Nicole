@@ -53,11 +53,23 @@ const createCard = (pet) => {
   attButton.classList.add("iconEdit")
   attButton.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`
 
-  attButton.addEventListener("click", (e) => {})
+  attButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    const form = editPetModal(pet)
+    createModal(form)
+    lockScroll()
+  })
 
   const deleteButton = document.createElement("button")
   deleteButton.classList.add("iconDelete")
   deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`
+
+  deleteButton.addEventListener("click", async (e) => {
+    e.preventDefault()
+    const form = deletePetModal(pet)
+    createModal(form)
+    lockScroll()
+  })
 
   dataPet.append(petName, petSpecie)
   buttonContainer.append(attButton, deleteButton)
@@ -107,7 +119,7 @@ const createModal = (children) => {
   modalBg.classList.add("modalBg")
 
   const modalContainer = document.createElement("section")
-  modalContainer.classList = "modalContainer"
+  modalContainer.classList = "modal"
 
   const modalHeader = document.createElement("div")
   modalHeader.classList.add("modalHeader")
@@ -120,6 +132,7 @@ const createModal = (children) => {
     const { className } = e.target
     if (className === "modalBg" || className === "fa-regular fa-circle-xmark") {
       modalBg.remove()
+      unlockScroll()
     }
   })
 
@@ -151,16 +164,124 @@ const editUserModal = (user) => {
   button.classList.add("btnBrand")
   button.innerText = "Atualizar"
 
+  button.addEventListener("click", (e) => {
+    e.preventDefault
+  })
+
   formContainer.append(title, nameInput, avatarInput, button)
+
+  return formContainer
+}
+
+const editPetModal = (pet) => {
+  const formContainer = document.createElement("form")
+  formContainer.classList.add("formContainer")
+
+  const title = document.createElement("h3")
+  title.innerText = "Editar pet"
+
+  const nameInput = document.createElement("input")
+  nameInput.type = "text"
+  nameInput.classList.add("modalInput")
+  nameInput.placeholder = "Nome"
+  nameInput.value = pet.name
+
+  const breadInput = document.createElement("input")
+  breadInput.type = "text"
+  breadInput.classList.add("modalInput")
+  breadInput.placeholder = "Raça"
+  breadInput.value = pet.bread
+
+  const specieInput = document.createElement("input")
+  specieInput.type = "text"
+  specieInput.classList.add("modalInput")
+  specieInput.placeholder = "Espécie"
+  specieInput.value = pet.species
+
+  const avatarInput = document.createElement("input")
+  avatarInput.type = "text"
+  avatarInput.classList.add("modalInput")
+  avatarInput.placeholder = "Url do Avatar"
+  avatarInput.value = pet.avatar_url
+
+  const button = document.createElement("button")
+  button.classList.add("btnBrand")
+  button.innerText = "Atualizar"
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault
+  })
+
+  formContainer.append(
+    title,
+    nameInput,
+    breadInput,
+    specieInput,
+    avatarInput,
+    button
+  )
+
+  return formContainer
+}
+
+const deleteUserModal = (user) => {
+  const formContainer = document.createElement("form")
+  formContainer.classList.add("formContainer")
+
+  const title = document.createElement("h3")
+  title.innerText = "Deseja mesmo deletar sua conta?"
+  title.classList.add("txtCenter")
+
+  const button = document.createElement("button")
+  button.classList.add("btnSmallAlert")
+  button.innerText = "Quero deletar minha conta"
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault
+  })
+
+  formContainer.append(title, button)
+
+  return formContainer
+}
+
+const deletePetModal = (pet) => {
+  const formContainer = document.createElement("form")
+  formContainer.classList.add("formContainer")
+
+  const title = document.createElement("h3")
+  title.innerText = "Deseja mesmo deletar sua conta?"
+  title.classList.add("txtCenter")
+
+  const button = document.createElement("button")
+  button.classList.add("btnSmallAlert")
+  button.innerText = "Quero deletar minha conta"
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault
+  })
+
+  formContainer.append(title, button)
 
   return formContainer
 }
 
 const editUserButton = document.querySelector("#editUser")
 editUserButton.addEventListener("click", async (e) => {
+  e.preventDefault()
   const user = await getMyProfile()
   const form = editUserModal(user)
   createModal(form)
+  lockScroll()
+})
+
+const deleteUserButton = document.querySelector("#deleteUser")
+deleteUserButton.addEventListener("click", async (e) => {
+  e.preventDefault()
+  const user = await getMyProfile()
+  const form = deleteUserModal(user)
+  createModal(form)
+  lockScroll()
 })
 
 renderMyProfile()
