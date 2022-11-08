@@ -175,7 +175,7 @@ export async function editMyProfile(body) {
         "Content-type": "application/json",
         Authorization: "Bearer " + user,
       },
-      body: body,
+      body: JSON.stringify(body),
     })
     const response = await request.json()
     return response
@@ -193,6 +193,15 @@ export async function deleteMyProfile() {
         Authorization: "Bearer " + user,
       },
     })
+    if (request.ok) {
+      toast(
+        "Conta deletada com sucesso!",
+        "Redirecionando para a página de login"
+      )
+      setTimeout(() => {
+        window.location.assign("/pages/login/index.html")
+      }, 2700)
+    }
   } catch (err) {
     console.log(err)
   }
@@ -207,7 +216,7 @@ export async function editMyAdoptions(body, id) {
         "Content-type": "application/json",
         Authorization: "Bearer " + user,
       },
-      body: body,
+      body: JSON.stringify(body),
     })
     const response = await request.json()
     return response
