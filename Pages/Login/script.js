@@ -16,9 +16,18 @@ export function loginUser() {
 
 loginUser()
 
-function buttonSpinner() {
+function buttonDisableSpiner() {
+    const inputUser = document.getElementById("email")
+    const inputPassword = document.getElementById("password")
     const btnLogin = document.getElementById("btnLoginPage")
     const spiner = document.getElementById("spiner")
+
+inputPassword.addEventListener('input', (event) => {
+        if(inputUser.value.length && inputPassword.value.length){
+            event.preventDefault()
+            btnLogin.disabled = false
+        }     
+    })
 
     btnLogin.addEventListener("click", () => {
         btnLogin.innerText = ""
@@ -26,4 +35,5 @@ function buttonSpinner() {
         btnLogin.append(spiner)
     })
 }
-buttonSpinner()
+
+buttonDisableSpiner()
