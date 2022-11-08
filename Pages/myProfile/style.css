@@ -139,47 +139,6 @@ body {
   align-items: center;
 }
 
-#myPetList {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 20px;
-  height: 300px;
-  overflow-y: auto;
-  margin: 20px 0;
-  padding: 20px 0;
-}
-
-#myPetList li {
-  width: 99%;
-  height: 100px;
-  display: flex;
-  font-size: 14px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-  padding-bottom: 0px;
-  padding-right: 20px;
-  box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
-  border-radius: 8px;
-  background-color: var(--white);
-}
-
-#myPetList li img { 
-  height: 80px;
-  width: 80px;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 8px 0 0 8px;
-}
-
-#myPetList li div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
 /* Footer */
 
 #pFooter {
@@ -219,7 +178,7 @@ body {
 }
 
 /* Scrollbar */
-.adoptionList::-webkit-scrollbar{
+.adoptionList::-webkit-scrollbar {
   width: 6px;
   height: 6px;
   background: transparent;
@@ -232,19 +191,6 @@ body {
 }
 
 .adoptionList::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-#myPetList::-webkit-scrollbar{
-  width: 6px;
-  height: 6px;
-  background: transparent;
-}
-#myPetList::-webkit-scrollbar-thumb {
-  background: var(--blue);
-  border-radius: 8px;
-}
-#myPetList::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
@@ -280,7 +226,7 @@ body {
   border-radius: 8px 8px 0 0;
   display: flex;
   position: relative;
-  height: 50px;
+  height: 40px;
 }
 
 .modalFooter {
@@ -298,7 +244,7 @@ body {
   position: absolute;
   cursor: pointer;
   right: 20px;
-  top: 4px;
+  top: 10px;
   color: var(--white);
   font-size: 18px;
 }
@@ -371,38 +317,11 @@ body {
     width: 300px;
     align-items: center;
   }
-
-  #myPetList  {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  #myPetList li {
-    width: 280px;
-    height: 100px;
-    display: flex;
-    font-size: 14px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-    padding-bottom: 0px;
-    padding-right: 20px;
-    box-shadow: 0px 0px 5px rgba(78, 32, 150, 0.25);
-    border-radius: 8px;
-    background-color: var(--white);
-  }
-
-  #myPetList li img { 
-    height: 100%;
-    width: 80px;
-  }
 }
 
 @media (min-width: 1050px) {
   .adoptionList li {
-    width: 98%;
+    width: 100%;
   }
 
 }

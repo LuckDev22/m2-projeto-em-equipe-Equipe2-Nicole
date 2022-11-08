@@ -207,10 +207,10 @@ export async function deleteMyProfile() {
   }
 }
 
-export async function editMyPets(body, id) {
+export async function editMyAdoptions(body, id) {
   const user = localStorage.getItem("TokenLogin")
   try {
-    const request = await fetch(baseUrl + "pets/" + id, {
+    const request = await fetch(baseUrl + "pet/" + id, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -219,7 +219,6 @@ export async function editMyPets(body, id) {
       body: JSON.stringify(body),
     })
     const response = await request.json()
-    console.log(response)
     return response
   } catch (err) {
     console.log(err)
@@ -251,49 +250,6 @@ export async function getAllMyPets() {
     })
     const response = await request.json()
     return response
-  } catch (err) {
-    console.log(err)
-  }
-}
-
-export async function createPet(body) {
-  const user = localStorage.getItem("TokenLogin")
-  try {
-    const request = await fetch(`${baseUrl}pets`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + user,
-      },
-      body: JSON.stringify(body),
-    })
-    if (request.ok) {
-      toast("Pet criado com sucesso!", "Atualizando a lista.")
-    }
-    const response = await request.json()
-    console.log(response)
-
-    if (
-      response.message == "please inform a valid image link" ||
-      response.message == "'avatar_url' is required"
-    ) {
-      console.log("toast avatar")
-      toast("Erro!", "Favor informar uma imagem válida.")
-    }
-  } catch (err) {
-    return err
-  }
-}
-
-export async function deleteMyPet(id) {
-  const user = localStorage.getItem("TokenLogin")
-  try {
-    const request = await fetch(baseUrl + "pets/" + id, {
-      method: "DELETE",
-      headers: {
-        Authorization: "Bearer " + user,
-      },
-    })
   } catch (err) {
     console.log(err)
   }
