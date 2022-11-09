@@ -228,8 +228,10 @@ const editUserModal = (user) => {
     editMyProfile(body)
     const modal = document.querySelector(".modalBg")
     modal.remove()
+    setTimeout(() => {
+      renderMyProfile()
+    }, 700)
     unlockScroll()
-    renderMyProfile()
   })
 
   formContainer.append(title, nameInput, avatarInput, button)
