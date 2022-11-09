@@ -1,6 +1,5 @@
 import { login } from "../../Scripts/api.js";
 
-
 const btnLogin = document.getElementById("btnLoginPage")
 const inputUser = document.getElementById("email")
 const inputPassword = document.getElementById("password")
