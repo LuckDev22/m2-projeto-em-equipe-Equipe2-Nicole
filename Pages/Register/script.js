@@ -25,7 +25,7 @@ function buttonSpinner() {
         btnReg.innerText = ""
         const spinner = document.createElement("i")
         spinner.classList = "imgLoading fa-solid fa-spinner"
-        spinner.style = "color: black"
+        spinner.style = "color: var(--blue-placeh)"
         btnReg.append(spinner)
     })
 }

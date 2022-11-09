@@ -109,7 +109,7 @@ export async function register(body, btn) {
     })
     if (request.ok) {
       toast(
-        "Conta criada com sucesso!",
+        "Conta criada!",
         "Redirecionando para a página de login"
       )
       setTimeout(() => {
@@ -118,17 +118,27 @@ export async function register(body, btn) {
       }, 2700)
     }
     const response = await request.json()
+    if (
+      response.message == "'email' field is required" ||
+      response.message == "'name' field is required" ||
+      response.message == "'password' field is required"
+    ) {
+      toast("Erro!", "Todos campos são obrigatórios")
+      setTimeout(() => {
+        btn.innerText = "Cadastrar"
+      }, 2000)
+    }
     if (response.message == "Email already in use") {
       toast("Erro!", "E-mail já cadastrado.")
       setTimeout(() => {
         btn.innerText = "Cadastrar"
-      }, 4000)
+      }, 2000)
     }
     if (
       response.message == "please inform a valid image link" ||
       response.message == "'avatar_url' is required"
     ) {
-      toast("Erro!", "Favor informar uma imagem válida.")
+      toast("Erro!", "Informar uma imagem válida.")
       setTimeout(() => {
         btn.innerText = "Cadastrar"
       }, 4000)
@@ -237,6 +247,19 @@ export async function editMyPets(body, id) {
       toast("Dados Atualizados!", "As informações do Pet foram substituídas.")
     }
     const response = await request.json()
+    if (
+      response.message == "'bread' field is required" ||
+      response.message == "'name' field is required" ||
+      response.message == "Wrong specie informed, only: 'Cachorro', 'Gato', 'Aves', 'Repteis', 'Outros' are aceptable"
+    ) {
+      toast("Erro!", "Todos campos são obrigatórios")
+    }
+    if (
+      response.message == "please inform a valid image link" ||
+      response.message == "'avatar_url' is required"
+    ) {
+      toast("Erro!", "Favor informar uma imagem válida.")
+    }
     return response
   } catch (err) {
     console.log(err)
@@ -291,7 +314,13 @@ export async function createPet(body) {
       toast("Pet criado com sucesso!", "Atualizando a lista...")
     }
     const response = await request.json()
-
+    if (
+      response.message == "'bread' field is required" ||
+      response.message == "'name' field is required" ||
+      response.message == "Wrong specie informed, only: 'Cachorro', 'Gato', 'Aves', 'Repteis', 'Outros' are aceptable"
+    ) {
+      toast("Erro!", "Todos campos são obrigatórios")
+    }
     if (
       response.message == "please inform a valid image link" ||
       response.message == "'avatar_url' is required"

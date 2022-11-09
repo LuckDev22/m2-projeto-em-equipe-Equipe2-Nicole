@@ -37,7 +37,7 @@ header {
     max-width: 320px;
     gap: 18px;
     padding: 20px;
-    margin-bottom: 50px;
+    padding-bottom: 77px;
     border-radius: var(--radius2);
 }
 
@@ -99,7 +99,7 @@ footer {
     }
 
     #divReg {
-        position: fixed;
+        position: absolute;
         top: 35%;
         background-color: var(--white);
     }
