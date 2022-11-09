@@ -1,7 +1,7 @@
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/"
 import { toast } from "./toast.js"
 
-export async function login(body, btt) {
+export async function login(body, btt, iptUser, iptPass) {
   try {
     const request = await fetch(baseUrl + "session/login", {
       method: "POST",
@@ -22,6 +22,8 @@ export async function login(body, btt) {
         setTimeout(() => {
         btt.innerText = "Login"
         btt.style = "background: var(--blue); border: 1px solid var(--blue)"
+        iptUser.value = ""
+        iptPass.value = ""
       }, 2500)
       }
     })
