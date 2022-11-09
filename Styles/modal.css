@@ -19,6 +19,7 @@
     position: absolute;
     background-color: var(--white);
     width: 400px;
+    max-width: 97vw;
     gap: 13px;
     border-radius: 8px;
     justify-content: center;
@@ -50,7 +51,7 @@
 
 .modalBox h2 {
     text-justify: distribute-all-lines;
-    padding: 0 33px;
+    padding: 0 13px;
     font-size: 20px;
     color: var(--black);
 }
@@ -64,7 +65,7 @@
 .modalBox div {
     display: flex;
     justify-content: space-between;
-    gap: 13px;
+    gap: 1px;
     align-items: center;
 }
 
