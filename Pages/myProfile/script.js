@@ -445,7 +445,6 @@ const createPetModal = () => {
   specieSelect.append(species, dog, cat, bird, reptile, other)
 
   specieSelect.addEventListener("change", () => {
-    console.log("teste")
     specieSelect.style = "color: var(--blue-dark);"
   })
 
