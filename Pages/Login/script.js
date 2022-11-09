@@ -1,4 +1,4 @@
-import { login } from "../../scripts/api.js";
+import { login } from "../../Scripts/api.js";
 
 
 const btnLogin = document.getElementById("btnLoginPage")
