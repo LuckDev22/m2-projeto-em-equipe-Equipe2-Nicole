@@ -426,9 +426,3 @@ body {
     width: 98%;
   }
 }
-
-@media (max-width: 453px) {
-  .perfilHeader {
-    padding-top: 70px;
-  }
-}
