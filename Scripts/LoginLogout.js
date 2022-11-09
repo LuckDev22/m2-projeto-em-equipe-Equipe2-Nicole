@@ -3,7 +3,7 @@ import { toast } from "./toast.js"
 export const verifyLogin = () => {
     const user = localStorage.getItem('TokenLogin') || ""
     if (user == "" || user == null || user == 'undefined') {
-        window.location.replace("../login/index.html");
+        window.location.replace("../Login/index.html");
     }
 };
 
@@ -13,7 +13,7 @@ export const logout = () => {
         localStorage.removeItem('TokenLogin')
         toast("Você está saindo", "Aguardamos sua visita")
         setTimeout(() => {
-            window.location.replace("../login/index.html");
+            window.location.replace("../Login/index.html");
         }, 2300);
     })
 }

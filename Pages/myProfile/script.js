@@ -8,13 +8,13 @@ import {
   editMyProfile,
   getAllMyPets,
   createPet,
-} from "../../scripts/api.js"
+} from "../../Scripts/api.js"
 import {
   verifyLogin,
   logout,
   lockScroll,
   unlockScroll,
-} from "../../scripts/LoginLogout.js"
+} from "../../Scripts/LoginLogout.js"
 
 verifyLogin()
 logout()

@@ -1,10 +1,10 @@
-import { getAllPets, deletePet, adotePet } from "../../scripts/api.js"
+import { getAllPets, deletePet, adotePet } from "../../Scripts/api.js"
 import {
   verifyLogin,
   logout,
   lockScroll,
   unlockScroll,
-} from "../../scripts/LoginLogout.js"
+} from "../../Scripts/LoginLogout.js"
 
 verifyLogin()
 logout()
