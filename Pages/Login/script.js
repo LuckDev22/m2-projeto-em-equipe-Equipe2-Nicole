@@ -1,5 +1,10 @@
 import { login } from "../../Scripts/api.js";
 
+
+const btnLogin = document.getElementById("btnLoginPage")
+const inputUser = document.getElementById("email")
+const inputPassword = document.getElementById("password")
+
 export function loginUser() {
     const formLogin = document.getElementById("login");
     formLogin.addEventListener("submit", (event) => {
@@ -8,20 +13,19 @@ export function loginUser() {
             email: event.target.children[0].value,
             password: event.target.children[1].value,
         };
-        login(body)
+        login(body, btnLogin, inputUser, inputPassword)
     });
 }
 
 loginUser()
 
 function buttonDisableSpiner() {
-    const inputUser = document.getElementById("email")
-    const inputPassword = document.getElementById("password")
-    const btnLogin = document.getElementById("btnLoginPage")
+    
+    
     const spiner = document.getElementById("spiner")
 
     inputPassword.addEventListener('input', (event) => {
-        if (inputUser.value.length && inputPassword.value.length) {
+        if (inputUser.value != "" && inputPassword.value != "") {
             event.preventDefault()
             btnLogin.disabled = false
         }

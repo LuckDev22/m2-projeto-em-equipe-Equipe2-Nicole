@@ -35,22 +35,18 @@
 
 @keyframes toastIt {
     0% {
-        right: 16px;
         bottom: -150px
     }
 
     25% {
-        right: 16px;
         bottom: 28px
     }
 
     50% {
-        right: 16px;
         bottom: 28px
     }
 
     100% {
-        right: 16px;
         bottom: -150px
     }
 }
@@ -73,4 +69,29 @@
     font-weight: 600;
     line-height: 21px;
     color: var(--white);
+}
+
+@media (min-width: 840px) {
+    @keyframes toastIt {
+        0% {
+            right: 16px;
+            bottom: -150px
+        }
+    
+        25% {
+            right: 16px;
+            bottom: 28px
+        }
+    
+        50% {
+            right: 16px;
+            bottom: 28px
+        }
+    
+        100% {
+            right: 16px;
+            bottom: -150px
+        }
+    }
+   
 }
