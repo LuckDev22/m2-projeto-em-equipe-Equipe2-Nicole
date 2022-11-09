@@ -1,7 +1,7 @@
 header {
     height: 77px;
     max-width: 100%;
-    min-width: 390px;
+    min-width: 100vw;
     background: var(--blue);
 }
 
@@ -25,7 +25,7 @@ header {
 
 #regPage {
     width: 100%;
-    min-width: 390px;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
 }
@@ -37,6 +37,7 @@ header {
     max-width: 320px;
     gap: 18px;
     padding: 20px;
+    margin-bottom: 50px;
     border-radius: var(--radius2);
 }
 

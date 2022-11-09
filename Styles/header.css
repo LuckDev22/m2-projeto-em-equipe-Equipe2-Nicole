@@ -35,3 +35,10 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 453px) {
+  
+    .container {
+      padding: 23px 5vw;
+    }
+  }

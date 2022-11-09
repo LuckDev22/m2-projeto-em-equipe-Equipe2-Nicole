@@ -61,7 +61,7 @@ body {
   justify-content: center;
 }
 
-#editUser{
+#editUser {
   display: flex;
   flex-wrap: nowrap;
   gap: 7px;
@@ -283,6 +283,7 @@ body {
   flex-direction: column;
   background-color: var(--white);
   width: 400px;
+  max-width: 95vw;
   gap: 13px;
   border-radius: 12px 12px 8px 8px;
   justify-content: center;
