@@ -1,4 +1,4 @@
-import { register } from "../../Scripts/api.js";
+import { register } from "../../scripts/api.js";
 
 const btnReg = document.querySelector(".btnBrand")
 
