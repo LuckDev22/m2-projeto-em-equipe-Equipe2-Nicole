@@ -15,7 +15,7 @@ export async function login(body, btt, iptUser, iptPass) {
         toast("Login", "Login realizado com sucesso")
         localStorage.setItem("TokenLogin", response.token)
         setTimeout(() => {
-          window.location.assign("../home/index.html")
+          window.location.assign("../Home/index.html")
         }, 2500)
       } else {
         toast("Erro!", "Email ou senha incorreto")
@@ -114,7 +114,7 @@ export async function register(body, btn) {
       )
       setTimeout(() => {
         btn.innerText = "Cadastrar"
-        window.location.assign("/pages/login/index.html")
+        window.location.assign("/Pages/Login/index.html")
       }, 2700)
     }
     const response = await request.json()
@@ -217,7 +217,7 @@ export async function deleteMyProfile() {
         "Redirecionando para a página de login"
       )
       setTimeout(() => {
-        window.location.assign("/pages/login/index.html")
+        window.location.assign("/Pages/Login/index.html")
       }, 2700)
     }else{
       toast(
