@@ -261,10 +261,10 @@ const editPetModal = (pet) => {
   breadInput.required = true
 
   const specieSelect = document.createElement("select")
-  
+
   specieSelect.classList.add("modalInput")
   specieSelect.required = true
-  
+
   const dog = document.createElement("option")
   dog.innerText = 'Cachorro'
   const cat = document.createElement("option")
@@ -317,7 +317,7 @@ const editPetModal = (pet) => {
     avatarInput,
     button
   )
-  
+
   return formContainer
 }
 
@@ -423,8 +423,9 @@ const createPetModal = () => {
   breadInput.required = true
 
   const specieSelect = document.createElement("select")
-  
-  specieSelect.classList.add("modalInput")  
+
+  specieSelect.classList.add("modalInput")
+  specieSelect.id = "select"
   specieSelect.required = true
 
   const species = document.createElement("option")
@@ -442,10 +443,12 @@ const createPetModal = () => {
   const other = document.createElement('option')
   other.innerText = 'Outros'
 
-  
   specieSelect.append(species, dog, cat, bird, reptile, other)
-  
 
+  specieSelect.addEventListener('change', ()=>{
+    console.log('teste');
+    specieSelect.style = 'color: var(--blue-dark);'
+  })
 
   const avatarInput = document.createElement("input")
   avatarInput.type = "text"

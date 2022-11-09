@@ -130,7 +130,7 @@ body {
   padding: 20px
 }
 
-.dataPet p{
+.dataPet p {
   max-width: 14ch;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -323,13 +323,17 @@ body {
   color: var(--blue);
 }
 
-.modalInput, select, option {
+.modalInput {
   padding: 14px 10px;
   outline: none;
   border: 1px solid var(--blue-placeh);
   background-color: var(--white);
   color: var(--blue-dark);
   border-radius: 4px;
+}
+
+#select {
+  color: var(--blue-placeh);
 }
 
 .modalInput::placeholder {
