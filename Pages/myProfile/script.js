@@ -260,12 +260,25 @@ const editPetModal = (pet) => {
   breadInput.value = pet.bread
   breadInput.required = true
 
-  const specieInput = document.createElement("input")
-  specieInput.type = "text"
-  specieInput.classList.add("modalInput")
-  specieInput.placeholder = "Espécie"
-  specieInput.value = pet.species
-  specieInput.required = true
+  const specieSelect = document.createElement("select")
+  
+  specieSelect.classList.add("modalInput")
+  specieSelect.required = true
+  
+  const dog = document.createElement("option")
+  dog.innerText = 'Cachorro'
+  const cat = document.createElement("option")
+  cat.innerText = 'Gato'
+  const bird = document.createElement("option")
+  bird.innerText = 'Aves'
+  const reptile = document.createElement("option")
+  reptile.innerText = 'Repteis'
+  const other = document.createElement('option')
+  other.innerText = 'Outros'
+
+
+  specieSelect.append(dog, cat, bird, reptile, other)
+  specieSelect.value = pet.species
 
   const avatarInput = document.createElement("input")
   avatarInput.type = "text"
@@ -284,7 +297,7 @@ const editPetModal = (pet) => {
     let body = {
       name: nameInput.value,
       bread: breadInput.value,
-      species: specieInput.value,
+      species: specieSelect.value,
       avatar_url: avatarInput.value,
     }
 
@@ -300,11 +313,11 @@ const editPetModal = (pet) => {
     title,
     nameInput,
     breadInput,
-    specieInput,
+    specieSelect,
     avatarInput,
     button
   )
-
+  
   return formContainer
 }
 
@@ -409,11 +422,30 @@ const createPetModal = () => {
   breadInput.placeholder = "Raça"
   breadInput.required = true
 
-  const specieInput = document.createElement("input")
-  specieInput.type = "text"
-  specieInput.classList.add("modalInput")
-  specieInput.placeholder = "Espécie"
-  specieInput.required = true
+  const specieSelect = document.createElement("select")
+  
+  specieSelect.classList.add("modalInput")  
+  specieSelect.required = true
+
+  const species = document.createElement("option")
+  species.innerText = 'Espécies'
+  species.setAttribute("disabled", "")
+  species.setAttribute("selected", "")
+  const dog = document.createElement("option")
+  dog.innerText = 'Cachorro'
+  const cat = document.createElement("option")
+  cat.innerText = 'Gato'
+  const bird = document.createElement("option")
+  bird.innerText = 'Aves'
+  const reptile = document.createElement("option")
+  reptile.innerText = 'Repteis'
+  const other = document.createElement('option')
+  other.innerText = 'Outros'
+
+  
+  specieSelect.append(species, dog, cat, bird, reptile, other)
+  
+
 
   const avatarInput = document.createElement("input")
   avatarInput.type = "text"
@@ -431,7 +463,7 @@ const createPetModal = () => {
     let body = {
       name: nameInput.value,
       bread: breadInput.value,
-      species: specieInput.value,
+      species: specieSelect.value,
       avatar_url: avatarInput.value,
     }
 
@@ -447,7 +479,7 @@ const createPetModal = () => {
     title,
     nameInput,
     breadInput,
-    specieInput,
+    specieSelect,
     avatarInput,
     button
   )
