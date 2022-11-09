@@ -130,6 +130,13 @@ body {
   padding: 20px
 }
 
+.dataPet p {
+  max-width: 14ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* All Pet List */
 
 .petListHeader {
@@ -323,6 +330,10 @@ body {
   background-color: var(--white);
   color: var(--blue-dark);
   border-radius: 4px;
+}
+
+#select {
+  color: var(--blue-placeh);
 }
 
 .modalInput::placeholder {
