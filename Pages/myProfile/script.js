@@ -266,16 +266,15 @@ const editPetModal = (pet) => {
   specieSelect.required = true
 
   const dog = document.createElement("option")
-  dog.innerText = 'Cachorro'
+  dog.innerText = "Cachorro"
   const cat = document.createElement("option")
-  cat.innerText = 'Gato'
+  cat.innerText = "Gato"
   const bird = document.createElement("option")
-  bird.innerText = 'Aves'
+  bird.innerText = "Aves"
   const reptile = document.createElement("option")
-  reptile.innerText = 'Repteis'
-  const other = document.createElement('option')
-  other.innerText = 'Outros'
-
+  reptile.innerText = "Repteis"
+  const other = document.createElement("option")
+  other.innerText = "Outros"
 
   specieSelect.append(dog, cat, bird, reptile, other)
   specieSelect.value = pet.species
@@ -429,25 +428,25 @@ const createPetModal = () => {
   specieSelect.required = true
 
   const species = document.createElement("option")
-  species.innerText = 'Espécies'
+  species.innerText = "Espécies"
   species.setAttribute("disabled", "")
   species.setAttribute("selected", "")
   const dog = document.createElement("option")
-  dog.innerText = 'Cachorro'
+  dog.innerText = "Cachorro"
   const cat = document.createElement("option")
-  cat.innerText = 'Gato'
+  cat.innerText = "Gato"
   const bird = document.createElement("option")
-  bird.innerText = 'Aves'
+  bird.innerText = "Aves"
   const reptile = document.createElement("option")
-  reptile.innerText = 'Repteis'
-  const other = document.createElement('option')
-  other.innerText = 'Outros'
+  reptile.innerText = "Repteis"
+  const other = document.createElement("option")
+  other.innerText = "Outros"
 
   specieSelect.append(species, dog, cat, bird, reptile, other)
 
-  specieSelect.addEventListener('change', () => {
-    console.log('teste');
-    specieSelect.style = 'color: var(--blue-dark);'
+  specieSelect.addEventListener("change", () => {
+    console.log("teste")
+    specieSelect.style = "color: var(--blue-dark);"
   })
 
   const avatarInput = document.createElement("input")
@@ -512,6 +511,14 @@ newPetButton.addEventListener("click", async (e) => {
   const form = createPetModal()
   createModal(form)
   lockScroll()
+})
+
+const menuIcon = document.querySelector("#menuIcon")
+
+menuIcon.addEventListener("change", (e) => {
+  const menu = document.querySelector("#headerBtns")
+  menu.classList.toggle("showMenu")
+  menu.classList.toggle("hideMenu")
 })
 
 renderMyProfile()

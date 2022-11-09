@@ -18,17 +18,30 @@
 
 <body>
     <header>
-        <span class="container" id='navHeader'>
-            <div id="headerLogo">
-                <i class="fa-solid fa-paw"></i>
-                <h2>KenziePets</h2>
+        <span class="container" id="navHeader">
+          <div id="headerLogo">
+            <i class="fa-solid fa-paw"></i>
+            <a href="../home/index.html">
+              <h2>KenziePets</h2>
+            </a>
+          </div>
+  
+          <div id="btnContainer">
+            <div id="#menuButton">
+              <input type="checkbox" id="menuIcon" />
+              <label for="menuIcon">
+                <div>
+                  <span id="hambIcon"></span>
+                </div>
+              </label>
             </div>
-            <div id="headerBtns">
-                <a class="btnSmallLink" href="../myProfile/index.html">Meu Perfil</a>
-                <a class="btnSmallBrand" id="btnLogout">Logout</a>
+            <div id="headerBtns" class="hideMenu">
+              <a class="btnSmallLink" href="../home/index.html">Home</a>
+              <a class="btnSmallBrand" id="btnLogout">Logout</a>
             </div>
+          </div>
         </span>
-    </header>
+      </header>
     <div id="homeFilter">
         <span class="container filter">
             <h4 class='selected' id="allBtn">Todos</h4>

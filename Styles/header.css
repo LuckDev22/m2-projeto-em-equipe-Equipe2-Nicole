@@ -1,6 +1,7 @@
 .container {
-    padding: 23px 13vw;
+    padding: 23px 5vw;
 }
+
 
 #navHeader {
     position: fixed;
@@ -24,21 +25,110 @@
     color: var(--blue);
 }
 
-#headerBtns {
+#btnContainer {
     display: flex;
+    flex-direction: column;
+}
+
+#headerBtns {
+    /* display: flex; */
+    justify-content: space-evenly;
     align-items: center;
     gap: 13px;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    border-bottom: 1px solid var(--grey-light);
 }
 
-@media(max-width:550px) {
-    #navHeader {
-        justify-content: center;
-    }
+/* Hamburguer Icon */
+
+#hambIcon {
+    cursor: pointer;
+    width: 28px;
+    height: 4px;
+    border-radius: 8px;
+    background-color: var(--blue);
+    display: block;
+    position: relative;
+    transition: 0.5s ease-in-out;
 }
 
-@media (max-width: 453px) {
-  
+#hambIcon:before,
+#hambIcon:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: var(--blue);
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+#hambIcon:before {
+    top: 10px;
+}
+
+#hambIcon:after {
+    bottom: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ label #hambIcon {
+    transform: rotate(45deg);
+}
+
+input[type="checkbox"]:checked ~ label #hambIcon:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input[type="checkbox"]:checked ~ label #hambIcon:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+.hideMenu {
+    display: none;
+}
+
+.showMenu {
+    display: flex;
+}
+
+@media (min-width: 453px) {
     .container {
-      padding: 23px 5vw;
+        padding: 23px 13vw;
     }
-  }
+}
+
+@media (min-width: 840px) {
+    #hambIcon  {
+        display: none;
+    }
+    #headerBtns {
+        display: flex;
+    }
+
+    .hideMenu {
+        display: flex;
+    }
+    #headerBtns {
+        /* display: flex; */
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        background-color: var(--white);
+        padding: 0;
+        top: 0;
+        right: 0;
+        border-bottom: none;
+    }
+}
