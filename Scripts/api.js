@@ -209,8 +209,15 @@ export async function deleteMyProfile() {
       setTimeout(() => {
         window.location.assign("/pages/login/index.html")
       }, 2700)
+    }else{
+      toast(
+      "Erro!",
+      "Para deletar sua conta, você não pode ter nenhum Pet associado!"
+    )
+
     }
   } catch (err) {
+    
     console.log(err)
   }
 }
