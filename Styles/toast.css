@@ -95,3 +95,33 @@
     }
    
 }
+
+
+@media (max-width: 450px) {
+    .div-toast {
+    width: 90vw;
+    height: 105px;
+    padding: 10px 20px;
+    gap: 17px;
+}
+
+.div-toastRed {
+    width: 90vw;
+    height: 105px;
+    padding: 10px 20px;
+    gap: 17px;
+}
+
+.toast-title {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.toast-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+}

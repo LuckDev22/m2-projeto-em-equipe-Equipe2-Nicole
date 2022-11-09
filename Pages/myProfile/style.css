@@ -8,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .avatarProfile {
@@ -56,9 +56,15 @@ body {
 .dataButtons {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+}
+
+#editUser{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 7px;
 }
 
 .txtBlue {
@@ -417,5 +423,11 @@ body {
 @media (min-width: 1050px) {
   .adoptionList li {
     width: 98%;
+  }
+}
+
+@media (max-width: 453px) {
+  .perfilHeader {
+    padding-top: 70px;
   }
 }
