@@ -1,4 +1,4 @@
-const baseUrl = "https://m2-api-adot-pet.herokuapp.com/"
+const baseUrl = "http://localhost:3333/"
 import { toast } from "./toast.js"
 
 export async function login(body, btt, iptUser, iptPass) {
